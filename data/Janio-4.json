@@ -1,0 +1,8 @@
+{
+  "contest": 190,
+  "handle": "Janio",
+  "risk": "2",
+  "title": "A public function setAccountList bypasses the onlyRole(SET_ACCOUNT_LIST_ROLE) role.",
+  "issueId": 4,
+  "issueUrl": "https://github.com/code-423n4/2022-12-prepo-findings/issues/4"
+}

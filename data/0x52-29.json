@@ -1,0 +1,8 @@
+{
+  "contest": 190,
+  "handle": "0x52",
+  "risk": "2",
+  "title": "User will be unable to withdraw their funds if fee is enabled and they don't have enough to cause a fee",
+  "issueId": 29,
+  "issueUrl": "https://github.com/code-423n4/2022-12-prepo-findings/issues/29"
+}

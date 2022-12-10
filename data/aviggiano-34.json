@@ -1,0 +1,8 @@
+{
+  "contest": 190,
+  "handle": "aviggiano",
+  "risk": "2",
+  "title": "`NFTScoreRequirement` does not take into account addresses collection balance",
+  "issueId": 34,
+  "issueUrl": "https://github.com/code-423n4/2022-12-prepo-findings/issues/34"
+}

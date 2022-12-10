@@ -24,5 +24,8 @@ It is assumed that an allowance has been approved by ``msg.sender`` to ``PrePOMa
 QA8: https://github.com/prepo-io/prepo-monorepo/blob/3541bc704ab185a969f300e96e2f744a572a3640/apps/smart-contracts/core/contracts/PrePOMarket.sol#L70-L71
 It is assumed that both the collatoral token and the LongShortTokens have 18 decimals. This assumption needs to be explicit. 
 
+QA9: https://github.com/prepo-io/prepo-monorepo/blob/3541bc704ab185a969f300e96e2f744a572a3640/apps/smart-contracts/core/contracts/PrePOMarket.sol#L65
+Needs to check zero amount for ``_amount``. 
+
 
 

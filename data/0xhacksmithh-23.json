@@ -1,0 +1,8 @@
+{
+  "contest": 190,
+  "handle": "0xhacksmithh",
+  "risk": "2",
+  "title": "User May lose his funds due to fee change in Collateral.sol contract file",
+  "issueId": 23,
+  "issueUrl": "https://github.com/code-423n4/2022-12-prepo-findings/issues/23"
+}

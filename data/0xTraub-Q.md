@@ -27,3 +27,10 @@ For amount to permit consider using `baseAmount` instead of type(uint256).max, w
 
 2. `if (baseTokenPermit.deadline != 0)`, consider using if `deadline > block.timestamp` to ensure that the deadline is in the future, and preventing any signatures from being rejected by the ERC20 permit function. It also serves the same function since a permit deadline of zero would result in bypassing that statement anyways.
 
+
+ --- Misc ---
+
+All events triggered on ownership changing a state-variable should include the original value and the new value. Examples include
+1. emit RedemptionFeeChange(_redemptionFee); only emits with new fee, not what it was changed from
+2. emit RedeemHookChange(address(redeemHook)) 
+3. emit MintHookChange(address(mintHook)) should include the previous address also not just the new one

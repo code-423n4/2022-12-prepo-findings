@@ -1,0 +1,8 @@
+{
+  "contest": 190,
+  "handle": "0xdeadbeef0x",
+  "risk": "3",
+  "title": "No checks for \"transferFrom/transfer\" return value on collateral base token",
+  "issueId": 42,
+  "issueUrl": "https://github.com/code-423n4/2022-12-prepo-findings/issues/42"
+}

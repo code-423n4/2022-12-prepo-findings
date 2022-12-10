@@ -27,6 +27,15 @@ For amount to permit consider using `baseAmount` instead of type(uint256).max, w
 
 2. `if (baseTokenPermit.deadline != 0)`, consider using if `deadline > block.timestamp` to ensure that the deadline is in the future, and preventing any signatures from being rejected by the ERC20 permit function. It also serves the same function since a permit deadline of zero would result in bypassing that statement anyways.
 
+--- PrePOMarketFactory.sol ---
+
+initialize() function can be called by anybody when the contract is not initialized.
+
+More importantly, if someone else runs this function, they will have full authority because of the __Ownable_init() function. Also, there is no 0 address check in the address arguments of the initialize() function, which must be defined.
+
+Solution: Specify that only a pre-defined initializer address is allowed to call the function
+`require (msg.sender == INITIALIZER_ADDR);
+
 
  --- Misc ---
 

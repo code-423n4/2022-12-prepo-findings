@@ -1,0 +1,8 @@
+{
+  "contest": 190,
+  "handle": "Janio",
+  "risk": "3",
+  "title": "Functions setRequiredScore and setCollectionScores are public on the contract NFTScoreRequirement",
+  "issueId": 15,
+  "issueUrl": "https://github.com/code-423n4/2022-12-prepo-findings/issues/15"
+}

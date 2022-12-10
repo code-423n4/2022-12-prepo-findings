@@ -1,0 +1,8 @@
+{
+  "contest": 190,
+  "handle": "yixxas",
+  "risk": "2",
+  "title": "deployedMarkets[] can be overwritten when a new market is created with the same salt",
+  "issueId": 39,
+  "issueUrl": "https://github.com/code-423n4/2022-12-prepo-findings/issues/39"
+}

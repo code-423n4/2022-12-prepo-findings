@@ -1,0 +1,8 @@
+{
+  "contest": 190,
+  "handle": "csanuragjain",
+  "risk": "2",
+  "title": "Collateral validity is not checked",
+  "issueId": 51,
+  "issueUrl": "https://github.com/code-423n4/2022-12-prepo-findings/issues/51"
+}

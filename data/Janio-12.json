@@ -1,0 +1,8 @@
+{
+  "contest": 190,
+  "handle": "Janio",
+  "risk": "3",
+  "title": "Anyone can set Allowed Msg Senders on function setAllowedMsgSenders",
+  "issueId": 12,
+  "issueUrl": "https://github.com/code-423n4/2022-12-prepo-findings/issues/12"
+}

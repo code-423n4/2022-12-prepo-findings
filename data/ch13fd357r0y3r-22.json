@@ -1,0 +1,8 @@
+{
+  "contest": 190,
+  "handle": "ch13fd357r0y3r",
+  "risk": "3",
+  "title": "Lack of Access control on AccountList caller makes anyone to redeem on RedeemHook() and bypassing the tokenSender to Steal any tokens.",
+  "issueId": 22,
+  "issueUrl": "https://github.com/code-423n4/2022-12-prepo-findings/issues/22"
+}

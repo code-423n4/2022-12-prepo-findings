@@ -1,0 +1,1 @@
+In [NFTScoreRequirement.sol](https://github.com/prepo-io/prepo-monorepo/blob/feat/2022-12-prepo/packages/prepo-shared-contracts/contracts/NFTScoreRequirement.sol) Use the memory keyword to store temporary variables that are only used within a single function. This will prevent the EVM from needing to create new storage slots for these variables, which can be expensive.

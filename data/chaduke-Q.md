@@ -27,5 +27,11 @@ It is assumed that both the collatoral token and the LongShortTokens have 18 dec
 QA9: https://github.com/prepo-io/prepo-monorepo/blob/3541bc704ab185a969f300e96e2f744a572a3640/apps/smart-contracts/core/contracts/PrePOMarket.sol#L65
 Needs to check zero amount for ``_amount``. 
 
+QA10. https://github.com/prepo-io/prepo-monorepo/blob/3541bc704ab185a969f300e96e2f744a572a3640/apps/smart-contracts/core/contracts/PrePOMarket.sol#L42
+Needs to check the contraint: ``_floorValuation < _ceilingValuation``. 
+
+GA11 https://github.com/prepo-io/prepo-monorepo/blob/3541bc704ab185a969f300e96e2f744a572a3640/apps/smart-contracts/core/contracts/PrePOMarket.sol#L65-L76
+Lacks the check of expiry time: ``require( block.timestamp < _expiryTime, "market expires"); ``
+
 
 

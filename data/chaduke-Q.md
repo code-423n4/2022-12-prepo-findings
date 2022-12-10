@@ -10,3 +10,8 @@ require(_recipient != address(this) && _recipient != address(0x0), "wrong recipi
 QA3: https://github.com/prepo-io/prepo-monorepo/blob/3541bc704ab185a969f300e96e2f744a572a3640/apps/smart-contracts/core/contracts/Collateral.sol#L49
 The function assumes that an approval from ``msg.sender`` has been made before the function call. This assumption needs to be made explicit as a documentation for the function; otherwise, the function will revert .
 
+QA4: https://github.com/prepo-io/prepo-monorepo/blob/3541bc704ab185a969f300e96e2f744a572a3640/apps/smart-contracts/core/contracts/TokenSender.sol#L50
+A range check is necessary for ``__priceMultiplier``, for example, ``__priceMultiplier <= MULTIPLIER_DENOMINATOR``. 
+
+QA5: https://github.com/prepo-io/prepo-monorepo/blob/3541bc704ab185a969f300e96e2f744a572a3640/apps/smart-contracts/core/contracts/Collateral.sol#L85
+Zero address check is needed so that fee will not be lost to the zero address.

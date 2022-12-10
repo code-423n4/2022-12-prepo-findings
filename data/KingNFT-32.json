@@ -1,0 +1,8 @@
+{
+  "contest": 190,
+  "handle": "KingNFT",
+  "risk": "2",
+  "title": "The ````Collateral```` contract doesn't work for fee-on-transfer and rebasing token",
+  "issueId": 32,
+  "issueUrl": "https://github.com/code-423n4/2022-12-prepo-findings/issues/32"
+}

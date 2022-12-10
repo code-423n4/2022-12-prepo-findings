@@ -1,0 +1,8 @@
+{
+  "contest": 190,
+  "handle": "SmartSek",
+  "risk": "3",
+  "title": "`_baseTokenAmount` might round to zero if token has less than 18 decimals.",
+  "issueId": 65,
+  "issueUrl": "https://github.com/code-423n4/2022-12-prepo-findings/issues/65"
+}

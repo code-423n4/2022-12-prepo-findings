@@ -1,0 +1,8 @@
+{
+  "contest": 190,
+  "handle": "noot",
+  "risk": "2",
+  "title": "TokenSender in RedeemHook does not necessarily use collateral token",
+  "issueId": 57,
+  "issueUrl": "https://github.com/code-423n4/2022-12-prepo-findings/issues/57"
+}

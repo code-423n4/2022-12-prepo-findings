@@ -1,0 +1,8 @@
+{
+  "contest": 190,
+  "handle": "0x52",
+  "risk": "2",
+  "title": "TokenSender#send would penalized large deposits by not given them refunds when PPO token supply is low",
+  "issueId": 30,
+  "issueUrl": "https://github.com/code-423n4/2022-12-prepo-findings/issues/30"
+}

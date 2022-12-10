@@ -1,0 +1,8 @@
+{
+  "contest": 190,
+  "handle": "ch13fd357r0y3r",
+  "risk": "3",
+  "title": "No Access Control on AllowedMsgsenders.sol contract allows anyone to steal Output tokens on TokenSender.sol contract",
+  "issueId": 19,
+  "issueUrl": "https://github.com/code-423n4/2022-12-prepo-findings/issues/19"
+}

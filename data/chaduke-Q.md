@@ -18,3 +18,11 @@ Zero address check is needed so that fee will not be lost to the zero address.
 
 QA6: lock all contracts at the most recent version of solidity, 0.8.17.
 
+QA7: https://github.com/prepo-io/prepo-monorepo/blob/3541bc704ab185a969f300e96e2f744a572a3640/apps/smart-contracts/core/contracts/PrePOMarket.sol#L65
+It is assumed that an allowance has been approved by ``msg.sender`` to ``PrePOMarket`` before the function call. Such assumption needs to be made explicit in documentation - otherwise, the function will revert. 
+
+QA8: https://github.com/prepo-io/prepo-monorepo/blob/3541bc704ab185a969f300e96e2f744a572a3640/apps/smart-contracts/core/contracts/PrePOMarket.sol#L70-L71
+It is assumed that both the collatoral token and the LongShortTokens have 18 decimals. This assumption needs to be explicit. 
+
+
+

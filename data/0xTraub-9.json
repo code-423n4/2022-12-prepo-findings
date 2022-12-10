@@ -1,0 +1,8 @@
+{
+  "contest": 190,
+  "handle": "0xTraub",
+  "risk": "2",
+  "title": "Mint/Redeem Hook setting can be frontrun",
+  "issueId": 9,
+  "issueUrl": "https://github.com/code-423n4/2022-12-prepo-findings/issues/9"
+}

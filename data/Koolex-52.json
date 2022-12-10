@@ -1,0 +1,8 @@
+{
+  "contest": 190,
+  "handle": "Koolex",
+  "risk": "3",
+  "title": "The recipient receives free collateral token if an ERC20 token that deducts a fee on transfer used as baseToken",
+  "issueId": 52,
+  "issueUrl": "https://github.com/code-423n4/2022-12-prepo-findings/issues/52"
+}

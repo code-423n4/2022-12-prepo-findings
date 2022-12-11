@@ -1,0 +1,8 @@
+{
+  "contest": 190,
+  "handle": "aviggiano",
+  "risk": "2",
+  "title": "Withdraw hook `userWithdrawLimitPerPeriod` is not enforced when the period is reset",
+  "issueId": 72,
+  "issueUrl": "https://github.com/code-423n4/2022-12-prepo-findings/issues/72"
+}

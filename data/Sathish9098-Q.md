@@ -3,7 +3,7 @@
 
 Use a solidity version of at least 0.8.12 to get string.concat() instead of abi.encodePacked(,) Use a solidity version of at least 0.8.13 to get the ability to use using for with a list of free function
 
-> There is 6 instance of this issue:
+> There is 14 instance of this issue:
 
        pragma solidity =0.8.7;
 
@@ -47,13 +47,32 @@ Use a solidity version of at least 0.8.12 to get string.concat() instead of abi.
 
 [File: prepo-monorepo/packages/prepo-shared-contracts/contracts/TokenSenderCaller.sol](https://github.com/prepo-io/prepo-monorepo/blob/feat/2022-12-prepo/packages/prepo-shared-contracts/contracts/TokenSenderCaller.sol)
  
-      address internal _treasury;                  //@AUDIT NO ZERO ADDRESS CHECK 
+      address internal _treasury;                  //@AUDIT 0X0 ADDRESS CHECK 
       ITokenSender internal _tokenSender;
 
      function setTreasury(address treasury) public virtual override {
-    _treasury = treasury;                    //@AUDIT NO ZERO ADDRESS CHECK 
+    _treasury = treasury;                    //@AUDIT 0X0 ADDRESS CHECK 
     emit TreasuryChange(treasury);
     }
+
+[File: prepo-monorepo/apps/smart-contracts/core/contracts/PrePOMarket.sol](https://github.com/prepo-io/prepo-monorepo/blob/feat/2022-12-prepo/apps/smart-contracts/core/contracts/PrePOMarket.sol)
+
+
+  constructor(address _governance, address _collateral, ILongShortToken _longToken, ILongShortToken _shortToken, uint256 _floorLongPayout, uint256 
+  _ceilingLongPayout, uint256 _floorValuation, uint256 _ceilingValuation, uint256 _expiryTime) {
+    require(_ceilingLongPayout > _floorLongPayout, "Ceiling must exceed floor");
+    require(_expiryTime > block.timestamp, "Invalid expiry");
+    require(_ceilingLongPayout <= MAX_PAYOUT, "Ceiling cannot exceed 1");
+
+    transferOwnership(_governance);  //@AUDIT _governance ZERO ADDRESS
+
+    collateral = IERC20(_collateral);    //@AUDIT _collateral ZERO ADDRESS
+
+[File: prepo-monorepo/apps/smart-contracts/core/contracts/PrePOMarket.sol] (https://github.com/prepo-io/prepo-monorepo/blob/feat/2022-12-prepo/apps/smart-contracts/core/contracts/PrePOMarket.sol)
+
+    
+
+
 
 ##
 
@@ -70,6 +89,24 @@ While it doesn’t save any gas because the compiler knows that developers often
      25:  bytes32 public constant SET_DEPOSIT_HOOK_ROLE = keccak256("Collateral_setDepositHook(ICollateralHook)");
      26:  bytes32 public constant SET_WITHDRAW_HOOK_ROLE = keccak256("Collateral_setWithdrawHook(ICollateralHook)");
      27:  bytes32 public constant SET_MANAGER_WITHDRAW_HOOK_ROLE = keccak256("Collateral_setManagerWithdrawHook(ICollateralHook)");
+
+[File: prepo-monorepo/apps/smart-contracts/core/contracts/DepositHook.sol](https://github.com/prepo-io/prepo-monorepo/blob/feat/2022-12-prepo/apps/smart-contracts/core/contracts/DepositHook.sol)
+
+       17:    bytes32 public constant SET_COLLATERAL_ROLE = keccak256("DepositHook_setCollateral(address)");
+       18:    bytes32 public constant SET_DEPOSIT_RECORD_ROLE = keccak256("DepositHook_setDepositRecord(address)");
+       19:    bytes32 public constant SET_DEPOSITS_ALLOWED_ROLE = keccak256("DepositHook_setDepositsAllowed(bool)");
+        20:   bytes32 public constant SET_ACCOUNT_LIST_ROLE = keccak256("DepositHook_setAccountList(IAccountList)");
+        21:   bytes32 public constant SET_REQUIRED_SCORE_ROLE = keccak256("DepositHook_setRequiredScore(uint256)");
+        22:   bytes32 public constant SET_COLLECTION_SCORES_ROLE = keccak256("DepositHook_setCollectionScores(IERC721[],uint256[])");
+        23:    bytes32 public constant REMOVE_COLLECTIONS_ROLE = keccak256("DepositHook_removeCollections(IERC721[])");
+        24:    bytes32 public constant SET_TREASURY_ROLE = keccak256("DepositHook_setTreasury(address)");
+        25:    bytes32 public constant SET_TOKEN_SENDER_ROLE = keccak256("DepositHook_setTokenSender(ITokenSender)");
+
+[File: prepo-monorepo/apps/smart-contracts/core/contracts/ManagerWithdrawHook.sol](https://github.com/prepo-io/prepo-monorepo/blob/feat/2022-12-prepo/apps/smart-contracts/core/contracts/ManagerWithdrawHook.sol)
+
+            13:   bytes32 public constant SET_COLLATERAL_ROLE = keccak256("ManagerWithdrawHook_setCollateral(address)");
+            14:  bytes32 public constant SET_DEPOSIT_RECORD_ROLE = keccak256("ManagerWithdrawHook_setDepositRecord(address)");
+             15:  bytes32 public constant SET_MIN_RESERVE_PERCENTAGE_ROLE = keccak256("ManagerWithdrawHook_setMinReservePercentage(uint256)");
 
 ##
 
@@ -101,6 +138,24 @@ Camel case examples
            25:  bytes32 public constant SET_DEPOSIT_HOOK_ROLE = keccak256("Collateral_setDepositHook(ICollateralHook)");
            26:  bytes32 public constant SET_WITHDRAW_HOOK_ROLE = keccak256("Collateral_setWithdrawHook(ICollateralHook)");
            27:  bytes32 public constant SET_MANAGER_WITHDRAW_HOOK_ROLE = keccak256("Collateral_setManagerWithdrawHook(ICollateralHook)");
+
+[File: prepo-monorepo/apps/smart-contracts/core/contracts/DepositHook.sol](https://github.com/prepo-io/prepo-monorepo/blob/feat/2022-12-prepo/apps/smart-contracts/core/contracts/DepositHook.sol)
+
+        17:    bytes32 public constant SET_COLLATERAL_ROLE = keccak256("DepositHook_setCollateral(address)");
+        18:    bytes32 public constant SET_DEPOSIT_RECORD_ROLE = keccak256("DepositHook_setDepositRecord(address)");
+        19:    bytes32 public constant SET_DEPOSITS_ALLOWED_ROLE = keccak256("DepositHook_setDepositsAllowed(bool)");
+        20:   bytes32 public constant SET_ACCOUNT_LIST_ROLE = keccak256("DepositHook_setAccountList(IAccountList)");
+        21:   bytes32 public constant SET_REQUIRED_SCORE_ROLE = keccak256("DepositHook_setRequiredScore(uint256)");
+        22:   bytes32 public constant SET_COLLECTION_SCORES_ROLE = keccak256("DepositHook_setCollectionScores(IERC721[],uint256[])");
+        23:    bytes32 public constant REMOVE_COLLECTIONS_ROLE = keccak256("DepositHook_removeCollections(IERC721[])");
+        24:    bytes32 public constant SET_TREASURY_ROLE = keccak256("DepositHook_setTreasury(address)");
+        25:    bytes32 public constant SET_TOKEN_SENDER_ROLE = keccak256("DepositHook_setTokenSender(ITokenSender)");
+
+[File: prepo-monorepo/apps/smart-contracts/core/contracts/ManagerWithdrawHook.sol](https://github.com/prepo-io/prepo-monorepo/blob/feat/2022-12-prepo/apps/smart-contracts/core/contracts/ManagerWithdrawHook.sol)
+
+            13:   bytes32 public constant SET_COLLATERAL_ROLE = keccak256("ManagerWithdrawHook_setCollateral(address)");
+            14:  bytes32 public constant SET_DEPOSIT_RECORD_ROLE = keccak256("ManagerWithdrawHook_setDepositRecord(address)");
+             15:  bytes32 public constant SET_MIN_RESERVE_PERCENTAGE_ROLE = keccak256("ManagerWithdrawHook_setMinReservePercentage(uint256)");
 
 ##
 

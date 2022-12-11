@@ -1,0 +1,8 @@
+{
+  "contest": 190,
+  "handle": "chaduke",
+  "risk": "3",
+  "title": "The collateral contract fails to enforce the invariant depositHook.getCollateral() == address(this).",
+  "issueId": 79,
+  "issueUrl": "https://github.com/code-423n4/2022-12-prepo-findings/issues/79"
+}

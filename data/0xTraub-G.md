@@ -18,13 +18,7 @@ https://github.com/prepo-io/prepo-monorepo/blob/feat/2022-12-prepo/apps/smart-co
 
 Is redundant. On line 69 `collateral.transferFrom(msg.sender, address(this), _amount);`, as long as transferFrom success is properly validated and reverts on failure, you do not need to check that the their balance >= _amount, since transferFrom will fail anyways due to insufficient balance. Saves gas on the external balanceOf call and the comparison not needing to occur
 
---- AccountList.sol ---
-1.   uint256 private resetIndex;
-  mapping(uint256 => mapping(address => bool)) private _resetIndexToAccountToIncluded;
-https://github.com/prepo-io/prepo-monorepo/blob/feat/2022-12-prepo/apps/smart-contracts/core/contracts/AccountList.sol#L8-L9
 
-1. Can replace resetIndex with a uint16 since 2^16 = 65536 which won't ever be exceeded by ownership, or even a uint8 if you think that 256 resets is unlikely
-2. Also allows you to wrap the entire `set` and `reset` function body in an `unchecked` block which saves gas since the risk of such a value overflowing is very minimal
 
 --- DepositRecord.sol ---
 

@@ -6,10 +6,13 @@ The protocol sets the following limits to accounts that can participate in the p
 2. Users that own NFT collections supported by the protocol. These NFTs are given to users/investors that have participated in previous activities with PrePo.
 
 These protections are in place because PrePo has put constrained capital limits.
-
 These protections can be bypassed if NFTs supported by `NFTScoreRequirement` are transferable (not soulbound) .
 
-Currently, according to the sponsor all supported tokens are Galxe NFT tokens that are soulbound. That is why I have assigned this issue as low.
+There is no statement in the documentation or readme/interfaces about the nature of the NFT tokens that will be supported.
+If sees fit by the judge, this could be upgraded to medium as it disrupts a functionality of the protocol.
+
+Currently, according to DM with the sponsor, the sponsor stated that all supported tokens are Galxe NFT tokens that are soulbound. 
+That is why I have assigned this issue as low. 
 
 The NFT contracts themselves have `setTransferable` function which can can be called by the owner(PrePO) and change the token to be transferable.
 

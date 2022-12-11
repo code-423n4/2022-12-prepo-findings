@@ -48,4 +48,9 @@ if(_Fee > 0)  withdrawHook.hook(msg.sender, _baseTokenAmount, _baseTokenAmountAf
 ```
 In this way, we do not have to check whether ``_fee > 0`` again inside the ``hookd()`` function.
 
+G9: https://github.com/prepo-io/prepo-monorepo/blob/3541bc704ab185a969f300e96e2f744a572a3640/apps/smart-contracts/core/contracts/Collateral.sol#L80
+might as well check whether ``_amount == 0 `` to save gas.
+
+
+
 

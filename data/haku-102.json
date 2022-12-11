@@ -1,0 +1,8 @@
+{
+  "contest": 190,
+  "handle": "haku",
+  "risk": "2",
+  "title": "transferFrom() may freeze the NFT in the contract",
+  "issueId": 102,
+  "issueUrl": "https://github.com/code-423n4/2022-12-prepo-findings/issues/102"
+}

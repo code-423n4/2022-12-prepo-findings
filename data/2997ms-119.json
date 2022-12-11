@@ -1,0 +1,8 @@
+{
+  "contest": 190,
+  "handle": "2997ms",
+  "risk": "2",
+  "title": "TOKEN TRANSFERS DO NOT VERIFY THAT THE TOKENS WERE SUCCESSFULLY TRANSFERRED",
+  "issueId": 119,
+  "issueUrl": "https://github.com/code-423n4/2022-12-prepo-findings/issues/119"
+}

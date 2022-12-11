@@ -1,0 +1,8 @@
+{
+  "contest": 190,
+  "handle": "cccz",
+  "risk": "2",
+  "title": "WithdrawHook.hook: globalWithdrawLimitPerPeriod and userWithdrawLimitPerPeriod can be bypassed",
+  "issueId": 73,
+  "issueUrl": "https://github.com/code-423n4/2022-12-prepo-findings/issues/73"
+}

@@ -1,0 +1,8 @@
+{
+  "contest": 190,
+  "handle": "Koolex",
+  "risk": "2",
+  "title": "Lack of check if manager's address was set could lead to loss of baseToken reserves",
+  "issueId": 94,
+  "issueUrl": "https://github.com/code-423n4/2022-12-prepo-findings/issues/94"
+}

@@ -1,0 +1,8 @@
+{
+  "contest": 190,
+  "handle": "fs0c",
+  "risk": "2",
+  "title": "The withdraw limits set in WithdrawHook.sol can be bypassed during the first withdrawal.",
+  "issueId": 110,
+  "issueUrl": "https://github.com/code-423n4/2022-12-prepo-findings/issues/110"
+}

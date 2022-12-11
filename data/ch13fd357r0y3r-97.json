@@ -1,0 +1,8 @@
+{
+  "contest": 190,
+  "handle": "ch13fd357r0y3r",
+  "risk": "3",
+  "title": "Lack of Access control on NFTScoreRequirement scoring mechanism",
+  "issueId": 97,
+  "issueUrl": "https://github.com/code-423n4/2022-12-prepo-findings/issues/97"
+}

@@ -1,0 +1,8 @@
+{
+  "contest": 190,
+  "handle": "hihen",
+  "risk": "2",
+  "title": "Hacked admin or malicious admin can immediately steal all baseToken in Collateral",
+  "issueId": 117,
+  "issueUrl": "https://github.com/code-423n4/2022-12-prepo-findings/issues/117"
+}

@@ -1,0 +1,8 @@
+{
+  "contest": 190,
+  "handle": "fs0c",
+  "risk": "2",
+  "title": "Possible DOS when calling deposit in Collateral.sol ",
+  "issueId": 118,
+  "issueUrl": "https://github.com/code-423n4/2022-12-prepo-findings/issues/118"
+}

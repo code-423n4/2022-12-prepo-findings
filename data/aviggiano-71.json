@@ -1,0 +1,8 @@
+{
+  "contest": 190,
+  "handle": "aviggiano",
+  "risk": "2",
+  "title": "`PrePOMarketFactory.createMarket` does not check for the existence of previously `deployedMarkets` with the same `_salt`",
+  "issueId": 71,
+  "issueUrl": "https://github.com/code-423n4/2022-12-prepo-findings/issues/71"
+}

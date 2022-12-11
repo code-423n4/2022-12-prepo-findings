@@ -1,0 +1,8 @@
+{
+  "contest": 190,
+  "handle": "idkwhatimdoing",
+  "risk": "2",
+  "title": "Missing pause() and unpause() implementation when using Pausable",
+  "issueId": 115,
+  "issueUrl": "https://github.com/code-423n4/2022-12-prepo-findings/issues/115"
+}

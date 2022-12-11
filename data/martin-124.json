@@ -1,0 +1,8 @@
+{
+  "contest": 190,
+  "handle": "martin",
+  "risk": "2",
+  "title": "[M-02] Usage of deprecated `send` to send eth",
+  "issueId": 124,
+  "issueUrl": "https://github.com/code-423n4/2022-12-prepo-findings/issues/124"
+}

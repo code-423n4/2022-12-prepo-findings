@@ -8,6 +8,13 @@
 
 2. Should use SafeApprove for collateral approvals in the event where non-standard approval requires first zero-ing out approvals to increase or to use increaseAllowance
 
+3. Decimal Mismatch from OpenZeppelin ERC20. The OpenZeppelin ERC20 token file enforces 18 decimals of precision unless explicitly overwritten. This means all long-short tokens will be default 18-decimals precision. In the mint/redeem functions the amount of tokens minted/burned is based on some amount of collateral, I.E if USDC/USDT, which has 6-decimals of precision, is used as collateral to mint, then 1e6 amount of long-short tokens will be minted to the user. This means that there is now a mismatch between number of decimals stated in the ERC20 `decimals()` method, and the actual number of decimals used for tracking balances of tokens. Given that external protocols may do calculations based on the stated number of decimals to save precision, this can lead to misc. rounding-errors. It may also complicated/break front ends which rely on proper decimal numbers to display properly formatted balances to users.
+
+https://github.com/prepo-io/prepo-monorepo/blob/feat/2022-12-prepo/apps/smart-contracts/core/contracts/PrePOMarket.sol#L70-L71
+https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC20/ERC20.sol#L87-L89
+
+Solution: Modify LongShortToken.sol to set the number of decimals to the same as the collateral number, or do dynamic scaling at the time of mint/redeem to scale from collateral-decimals up/down to 18 when non-18-decimal collateral is used.
+
 --- Collateral.sol ---
 
 1. Ownership can pause protocol to prevent redemptions, making all tokens for a given market worthless by virtue of not being redeemable for collateral. 

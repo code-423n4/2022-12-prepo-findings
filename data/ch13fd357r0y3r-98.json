@@ -1,0 +1,8 @@
+{
+  "contest": 190,
+  "handle": "ch13fd357r0y3r",
+  "risk": "3",
+  "title": "Missing Core access control for Setting up Treasury address and TokenSender address.",
+  "issueId": 98,
+  "issueUrl": "https://github.com/code-423n4/2022-12-prepo-findings/issues/98"
+}

@@ -14,7 +14,7 @@ QA4: https://github.com/prepo-io/prepo-monorepo/blob/3541bc704ab185a969f300e96e2
 A range check is necessary for ``__priceMultiplier``, for example, ``__priceMultiplier <= MULTIPLIER_DENOMINATOR``. 
 
 QA5: https://github.com/prepo-io/prepo-monorepo/blob/3541bc704ab185a969f300e96e2f744a572a3640/apps/smart-contracts/core/contracts/Collateral.sol#L85
-Zero address check is needed so that fee will not be lost to the zero address.
+Zero address check is needed so that fee will not be lost to the zero address of manager. 
 
 QA6: lock all contracts at the most recent version of solidity, 0.8.17.
 

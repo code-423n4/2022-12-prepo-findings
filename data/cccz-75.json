@@ -1,0 +1,8 @@
+{
+  "contest": 190,
+  "handle": "cccz",
+  "risk": "2",
+  "title": "Collateral.managerWithdraw: owner can rug all baseToken",
+  "issueId": 75,
+  "issueUrl": "https://github.com/code-423n4/2022-12-prepo-findings/issues/75"
+}

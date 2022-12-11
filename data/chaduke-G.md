@@ -41,3 +41,11 @@ Changing memory variables to calldata vairables can save gas.
    
 ```
 
+G8 https://github.com/prepo-io/prepo-monorepo/blob/3541bc704ab185a969f300e96e2f744a572a3640/apps/smart-contracts/core/contracts/Collateral.sol#L53
+Checking whether _fee is equal to zero will save gas:
+```
+if(_Fee > 0)  withdrawHook.hook(msg.sender, _baseTokenAmount, _baseTokenAmountAfterFee);
+```
+In this way, we do not have to check whether ``_fee > 0`` again inside the ``hookd()`` function.
+
+

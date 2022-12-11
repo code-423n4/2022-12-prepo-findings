@@ -33,5 +33,13 @@ Needs to check the contraint: ``_floorValuation < _ceilingValuation``.
 GA11 https://github.com/prepo-io/prepo-monorepo/blob/3541bc704ab185a969f300e96e2f744a572a3640/apps/smart-contracts/core/contracts/PrePOMarket.sol#L65-L76
 Lacks the check of expiry time: ``require( block.timestamp < _expiryTime, "market expires"); ``
 
+GA12:https://github.com/prepo-io/prepo-monorepo/blob/3541bc704ab185a969f300e96e2f744a572a3640/apps/smart-contracts/core/contracts/TokenSender.sol#L42
+Instead of using transfer(), which is not safe, use the safeTransfer instead: 
+https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC20/utils/SafeERC20.sol
+
+GA13: https://github.com/prepo-io/prepo-monorepo/blob/3541bc704ab185a969f300e96e2f744a572a3640/packages/prepo-shared-contracts/contracts/TokenSenderCaller.sol#L16
+Zero address check is needed for the ``_treasury``, otherwise, fee might be sent to the zero address and get lost forever. 
+
+
 
 

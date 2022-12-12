@@ -34,6 +34,21 @@ WithdrawHook.sol
 @openzeppelin/contracts
 @openzeppelin/contracts-upgradeable
 
+
+## Consider shortening revert strings to less than 32 bytes and keccak
+
+Consider shortening revert strings to less than 32 bytes
+Revert strings more than 32 bytes require at least one additional
+mstore, along with additional operations for computing memory offset,
+etc.
+
+Even if you need a string to represent an error, it can usually be done
+in less than 32 bytes / characters.
+
+Note that this will only decrease runtime gas when the revert condition
+has been met. Regardless, it will decrease deploy time gas.
+
+
 ## Warning Compiller
 Warning: Unused function parameter. Remove or comment out the variable name to silence this warning.
   --> contracts/MintHook.sol:16:33:

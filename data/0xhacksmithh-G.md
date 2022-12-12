@@ -1,6 +1,6 @@
 ### [Gas-01] <x> = <x> + <y> costs less than <x> += <y> 
 
-*Instances (1)*:
+*Instances (6)*:
 ```solidity
 File:   apps/smart-contracts/core/contracts/DepositRecord.sol
 
@@ -31,5 +31,3 @@ File:   apps/smart-contracts/core/contracts/DepositRecord.sol
 
 https://github.com/prepo-io/prepo-monorepo/blob/feat/2022-12-prepo/apps/smart-contracts/core/contracts/DepositRecord.sol#L36
 ```
-
-### []

@@ -1,0 +1,8 @@
+{
+  "contest": 190,
+  "handle": "ak1",
+  "risk": "2",
+  "title": "PrePOMarket.sol : a sender who is not included in the account list can front run and mint prior to setting the `_mintHook`",
+  "issueId": 266,
+  "issueUrl": "https://github.com/code-423n4/2022-12-prepo-findings/issues/266"
+}

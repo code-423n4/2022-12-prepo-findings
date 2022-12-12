@@ -1,0 +1,8 @@
+{
+  "contest": 190,
+  "handle": "imare",
+  "risk": "2",
+  "title": "missing validation of price oracle",
+  "issueId": 237,
+  "issueUrl": "https://github.com/code-423n4/2022-12-prepo-findings/issues/237"
+}

@@ -1,0 +1,8 @@
+{
+  "contest": 190,
+  "handle": "rvierdiiev",
+  "risk": "2",
+  "title": "DepositTradeHelper.POOL_FEE_TIER is constant and there is no ability to use another tier",
+  "issueId": 200,
+  "issueUrl": "https://github.com/code-423n4/2022-12-prepo-findings/issues/200"
+}

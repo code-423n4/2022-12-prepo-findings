@@ -1,0 +1,8 @@
+{
+  "contest": 190,
+  "handle": "rvierdiiev",
+  "risk": "2",
+  "title": "DepositTradeHelper.depositAndTrade will not work normally with ERC20 that need to clear allowance",
+  "issueId": 198,
+  "issueUrl": "https://github.com/code-423n4/2022-12-prepo-findings/issues/198"
+}

@@ -1,0 +1,8 @@
+{
+  "contest": 190,
+  "handle": "8olidity",
+  "risk": "2",
+  "title": "Centralization risk - administrators can steal all basetokens in collateral by modifying the DepositRecord address",
+  "issueId": 140,
+  "issueUrl": "https://github.com/code-423n4/2022-12-prepo-findings/issues/140"
+}

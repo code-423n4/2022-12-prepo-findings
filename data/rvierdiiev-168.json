@@ -1,0 +1,8 @@
+{
+  "contest": 190,
+  "handle": "rvierdiiev",
+  "risk": "2",
+  "title": "In case of Collateral.depositHook is 0, then fee should not be collected",
+  "issueId": 168,
+  "issueUrl": "https://github.com/code-423n4/2022-12-prepo-findings/issues/168"
+}

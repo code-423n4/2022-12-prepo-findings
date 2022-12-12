@@ -1,0 +1,8 @@
+{
+  "contest": 190,
+  "handle": "Trust",
+  "risk": "2",
+  "title": "User may burn Short or Long tokens, losing any claim of collateral tokens and causing leak of value.",
+  "issueId": 304,
+  "issueUrl": "https://github.com/code-423n4/2022-12-prepo-findings/issues/304"
+}

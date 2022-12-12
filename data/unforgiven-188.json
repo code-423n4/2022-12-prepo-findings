@@ -1,0 +1,8 @@
+{
+  "contest": 190,
+  "handle": "unforgiven",
+  "risk": "2",
+  "title": "MISSING ZERO-ADDRESS CHECK IN CONSTRUCTORS AND THE SETTER FUNCTIONS",
+  "issueId": 188,
+  "issueUrl": "https://github.com/code-423n4/2022-12-prepo-findings/issues/188"
+}

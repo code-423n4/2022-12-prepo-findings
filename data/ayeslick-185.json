@@ -1,0 +1,8 @@
+{
+  "contest": 190,
+  "handle": "ayeslick",
+  "risk": "2",
+  "title": "DepositRecord doesn’t properly account for userToDeposit when withdrawing ",
+  "issueId": 185,
+  "issueUrl": "https://github.com/code-423n4/2022-12-prepo-findings/issues/185"
+}

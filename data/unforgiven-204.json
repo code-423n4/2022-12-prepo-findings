@@ -1,0 +1,8 @@
+{
+  "contest": 190,
+  "handle": "unforgiven",
+  "risk": "3",
+  "title": "position's wrong profit and loss or incorrect distribution of funds in contract PrePoMarket because it doesn't consider expiryTime for setting the value of finalLongPayout and calculating redeem amounts based on positions and Markets never expire",
+  "issueId": 204,
+  "issueUrl": "https://github.com/code-423n4/2022-12-prepo-findings/issues/204"
+}

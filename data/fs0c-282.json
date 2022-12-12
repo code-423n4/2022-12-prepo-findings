@@ -1,0 +1,8 @@
+{
+  "contest": 190,
+  "handle": "fs0c",
+  "risk": "2",
+  "title": "Redeem should revert if the TokenSender.sol doesn’t have enough outputtoken to reimburse to users.",
+  "issueId": 282,
+  "issueUrl": "https://github.com/code-423n4/2022-12-prepo-findings/issues/282"
+}

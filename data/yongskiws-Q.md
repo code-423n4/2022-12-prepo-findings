@@ -62,3 +62,11 @@ Warning: Unused function parameter. Remove or comment out the variable name to s
    |
 16 |  ... s sender, uint256 amountBeforeFee, uint256 amountAfterFee) external virtual override onlyAll ...
    |                                         ^^^^^^^^^^^^^^^^^^^^^^
+
+
+Warning: Contract code size exceeds 24576 bytes (a limit introduced in Spurious Dragon). This contract may not be deployable on mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+  --> contracts/PrePOMarketFactory.sol:12:1:
+   |
+12 | contract PrePOMarketFactory is IPrePOMarketFactory, OwnableUpgradeable, ReentrancyGuardUpgradeable {
+   | ^ (Relevant source part starts here and spans across multiple lines).
+

@@ -1,0 +1,8 @@
+{
+  "contest": 190,
+  "handle": "Trust",
+  "risk": "3",
+  "title": "A whale user is able to cause freeze of funds of other users by bypassing withdraw limit",
+  "issueId": 310,
+  "issueUrl": "https://github.com/code-423n4/2022-12-prepo-findings/issues/310"
+}

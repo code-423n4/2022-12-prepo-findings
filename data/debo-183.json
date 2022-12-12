@@ -1,0 +1,8 @@
+{
+  "contest": 190,
+  "handle": "debo",
+  "risk": "2",
+  "title": "SWC-131 Presence of unused variables CWE-1164: Irrelevant Code",
+  "issueId": 183,
+  "issueUrl": "https://github.com/code-423n4/2022-12-prepo-findings/issues/183"
+}

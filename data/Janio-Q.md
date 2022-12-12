@@ -101,6 +101,75 @@ The `_setRoleNominee(...) function is called by `revokeNomination(...)` and `gra
 ```
 **Recommendation:** Consider checking for `address(0)` before writing in the storage.
 
+## State Variable updated without checking for address(0)
 
+[`Collateral.sol#L85-L86`](https://github.com/prepo-io/prepo-monorepo/blob/3541bc704ab185a969f300e96e2f744a572a3640/apps/smart-contracts/core/contracts/Collateral.sol#L85-L86)
+```solidity
+function setManager(address _newManager) external override onlyRole(SET_MANAGER_ROLE) {
+    manager = _newManager;
+    ...
+}
+```
+
+**The above function `setTreasury` called by contracts who inherit from `TokenSenderCaller` also don't check for address(0)**
+[`TokenSenderCaller.sol#L11-L12`](https://github.com/prepo-io/prepo-monorepo/blob/3541bc704ab185a969f300e96e2f744a572a3640/packages/prepo-shared-contracts/contracts/TokenSenderCaller.sol#L11-L12)
+```solidity
+function setTreasury(address treasury) public virtual override {
+    _treasury = treasury;
+    ...
+}
+```
+
+[`DepositRecord.sol#L28-L32`](https://github.com/prepo-io/prepo-monorepo/blob/3541bc704ab185a969f300e96e2f744a572a3640/apps/smart-contracts/core/contracts/DepositRecord.sol#L28-L32)
+```solidity
+function recordDeposit(address _sender, uint256 _amount) external override onlyAllowedHooks {
+    require(_amount + globalNetDepositAmount <= globalNetDepositCap, "Global deposit cap exceeded");
+    require(_amount + userToDeposits[_sender] <= userDepositCap, "User deposit cap exceeded");
+    globalNetDepositAmount += _amount;
+    userToDeposits[_sender] += _amount;
+}
+```
+
+[`DepositRecord.sol#L50-L51`](https://github.com/prepo-io/prepo-monorepo/blob/3541bc704ab185a969f300e96e2f744a572a3640/apps/smart-contracts/core/contracts/DepositRecord.sol#L50-L51)
+```solidity
+function setAllowedHook(address _hook, bool _allowed) external override onlyRole(SET_ALLOWED_HOOK_ROLE) {
+    allowedHooks[_hook] = _allowed;
+    ...
+}
+```
+
+[`PrePOMarketFactory.sol#L22-L28`](https://github.com/prepo-io/prepo-monorepo/blob/3541bc704ab185a969f300e96e2f744a572a3640/apps/smart-contracts/core/contracts/PrePOMarketFactory.sol#L22-L28)
+```solidity
+function createMarket(string memory _tokenNameSuffix, string memory _tokenSymbolSuffix, bytes32 longTokenSalt, bytes32 shortTokenSalt, address _governance, address _collateral, uint256 _floorLongPrice, uint256 _ceilingLongPrice, uint256 _floorValuation, uint256 _ceilingValuation, uint256 _expiryTime) external override onlyOwner nonReentrant {
+    require(validCollateral[_collateral], "Invalid collateral");
+
+    (LongShortToken _longToken, LongShortToken _shortToken) = _createPairTokens(_tokenNameSuffix, _tokenSymbolSuffix, longTokenSalt, shortTokenSalt);
+    bytes32 _salt = keccak256(abi.encodePacked(_longToken, _shortToken));
+
+    PrePOMarket _newMarket = new PrePOMarket{salt: _salt}(_governance, _collateral, ILongShortToken(address(_longToken)), ILongShortToken(address(_shortToken)), _floorLongPrice, _ceilingLongPrice, _floorValuation, _ceilingValuation, _expiryTime);
+    ...
+}
+```
+
+[`PrePOMarketFactory.sol#L36-L37`](https://github.com/prepo-io/prepo-monorepo/blob/3541bc704ab185a969f300e96e2f744a572a3640/apps/smart-contracts/core/contracts/PrePOMarketFactory.sol#L36-L37)
+```solidity
+function setCollateralValidity(address _collateral, bool _validity) external override onlyOwner {
+    validCollateral[_collateral] = _validity;
+	...
+}
+```
+
+[`RedeemHook.sol#L30`](https://github.com/prepo-io/prepo-monorepo/blob/3541bc704ab185a969f300e96e2f744a572a3640/apps/smart-contracts/core/contracts/RedeemHook.sol#L30)
+```solidity
+function setTreasury(address _treasury) public override onlyOwner { super.setTreasury(_treasury); }
+```
+
+[`WithdrawHook.sol#L116`](https://github.com/prepo-io/prepo-monorepo/blob/3541bc704ab185a969f300e96e2f744a572a3640/apps/smart-contracts/core/contracts/WithdrawHook.sol#L116)
+```solidity
+function setTreasury(address _treasury) public override onlyRole(SET_TREASURY_ROLE) {
+    super.setTreasury(_treasury);
+}
+```
+**Recommendation:** Consider checking for `address(0)` before updating state variables.
 
 

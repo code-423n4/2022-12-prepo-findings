@@ -1,0 +1,8 @@
+{
+  "contest": 190,
+  "handle": "obront",
+  "risk": "3",
+  "title": "Protocol is not able to account for baseTokens generating yield",
+  "issueId": 252,
+  "issueUrl": "https://github.com/code-423n4/2022-12-prepo-findings/issues/252"
+}

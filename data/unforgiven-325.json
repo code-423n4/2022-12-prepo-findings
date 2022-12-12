@@ -1,0 +1,8 @@
+{
+  "contest": 190,
+  "handle": "unforgiven",
+  "risk": "3",
+  "title": "user's funds lock and incorrect code behavior because users withdrawal amount won't get reset for all users in each userPeriodLength in WithdrawHook contract",
+  "issueId": 325,
+  "issueUrl": "https://github.com/code-423n4/2022-12-prepo-findings/issues/325"
+}

@@ -23,3 +23,18 @@ some instance of this issue:
 
 ## File is missing NatSpec
 all the contract are in scope except interface is missing NatSpec consider adding them
+
+## USE NAMED IMPORTS INSTEAD OF PLAIN `IMPORT ‘FILE.SOL’
+for example use it like  ` import {Ownable} from "@openzeppelin/contracts/access/Ownable.sol";`
+[Collateral.sol#L4-L7](https://github.com/prepo-io/prepo-monorepo/blob/feat/2022-12-prepo/apps/smart-contracts/core/contracts/Collateral.sol#L4-L7)
+[DepositHook.sol#L4-L10](https://github.com/prepo-io/prepo-monorepo/blob/feat/2022-12-prepo/apps/smart-contracts/core/contracts/DepositHook.sol#L4-L10)
+[DepositRecord.sol#L4-L5](https://github.com/prepo-io/prepo-monorepo/blob/feat/2022-12-prepo/apps/smart-contracts/core/contracts/DepositRecord.sol#L4-L5)
+[DepositTradeHelper.sol#L4-L6](https://github.com/prepo-io/prepo-monorepo/blob/feat/2022-12-prepo/apps/smart-contracts/core/contracts/DepositTradeHelper.sol#L4-L6)
+[WithdrawHook.sol#L4-L7](https://github.com/prepo-io/prepo-monorepo/blob/feat/2022-12-prepo/apps/smart-contracts/core/contracts/WithdrawHook.sol#L4-L7)
+[PrePOMarketFactory.sol#L4-L10](https://github.com/prepo-io/prepo-monorepo/blob/feat/2022-12-prepo/apps/smart-contracts/core/contracts/PrePOMarketFactory.sol#L4-L10)
+
+## INITIALIZE() FUNCTION CAN BE CALLED BY ANYBODY
+`initialize()` function can be called anybody when the contract is not initialized.
+[PrePOMarketFactory.sol#L16](https://github.com/prepo-io/prepo-monorepo/blob/feat/2022-12-prepo/apps/smart-contracts/core/contracts/PrePOMarketFactory.sol#L16)
+[Collateral.sol#L34-L38](https://github.com/prepo-io/prepo-monorepo/blob/feat/2022-12-prepo/apps/smart-contracts/core/contracts/Collateral.sol#L34-L38)
+

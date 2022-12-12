@@ -1,0 +1,8 @@
+{
+  "contest": 190,
+  "handle": "hansfriese",
+  "risk": "2",
+  "title": "`PrePOMarket.setFinalLongPayout()` shouldn't be called twice.",
+  "issueId": 231,
+  "issueUrl": "https://github.com/code-423n4/2022-12-prepo-findings/issues/231"
+}

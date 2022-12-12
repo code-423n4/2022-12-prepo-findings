@@ -1,0 +1,8 @@
+{
+  "contest": 190,
+  "handle": "0Kage",
+  "risk": "2",
+  "title": "Potential denial of Service to an existing LP if protocol owner resets the `AccountList`",
+  "issueId": 297,
+  "issueUrl": "https://github.com/code-423n4/2022-12-prepo-findings/issues/297"
+}

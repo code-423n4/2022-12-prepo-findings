@@ -1,0 +1,8 @@
+{
+  "contest": 190,
+  "handle": "wait",
+  "risk": "3",
+  "title": "Base tokens will be 'burned' if manager is zero when managerWithdraw is called",
+  "issueId": 208,
+  "issueUrl": "https://github.com/code-423n4/2022-12-prepo-findings/issues/208"
+}

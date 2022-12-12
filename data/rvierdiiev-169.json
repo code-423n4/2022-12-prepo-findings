@@ -1,0 +1,8 @@
+{
+  "contest": 190,
+  "handle": "rvierdiiev",
+  "risk": "2",
+  "title": "DepositHook and WithdrawHook ability to change collateral and deposit record creates risks to break hook's work",
+  "issueId": 169,
+  "issueUrl": "https://github.com/code-423n4/2022-12-prepo-findings/issues/169"
+}

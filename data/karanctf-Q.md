@@ -1,4 +1,20 @@
-Use scientific notation (e.g. `10e18`) rather than exponentiation (e.g. `10**18`)
+
+## Off by one error with `block.timestamp`
+**Summary**: An off by one error in Solidity occurs when a condition or calculation is incorrect by one unit, leading to incorrect behavior or unexpected results.
+In contract `WithdrawHooks.sol` in `hook` function.
+
+**Lines affected**:
+```solidity
+if (lastGlobalPeriodReset + globalPeriodLength < block.timestamp) {
+if (lastUserPeriodReset + userPeriodLength < block.timestamp) {
+```
+to fix these change it to 
+`lastGlobalPeriodReset + globalPeriodLength <= block.timestamp `
+and
+`lastUserPeriodReset + userPeriodLength <= block.timestamp`
+Above code will determine gloabletimeperiod more precisely 
+
+## Use scientific notation (e.g. `10e18`) rather than exponentiation (e.g. `10**18`)
 ```solidity
 apps/smart-contracts/core/contracts/TokenSender.sol:33:    _outputTokenDecimalsFactor = 10**outputToken.decimals();
 apps/smart-contracts/core/contracts/Collateral.sol:31:    baseTokenDenominator = 10**_newBaseTokenDecimals;

@@ -1,0 +1,8 @@
+{
+  "contest": 190,
+  "handle": "yongskiws",
+  "risk": "2",
+  "title": "depositAndTrade::exactInputSingleParams the possible return values not checked",
+  "issueId": 326,
+  "issueUrl": "https://github.com/code-423n4/2022-12-prepo-findings/issues/326"
+}

@@ -1,0 +1,8 @@
+{
+  "contest": 190,
+  "handle": "rvierdiiev",
+  "risk": "2",
+  "title": "Collateral.setWithdrawFee do not give time for users to react",
+  "issueId": 190,
+  "issueUrl": "https://github.com/code-423n4/2022-12-prepo-findings/issues/190"
+}

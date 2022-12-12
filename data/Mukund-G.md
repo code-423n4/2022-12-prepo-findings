@@ -7,6 +7,7 @@
 | 3   | THE RESULT OF FUNCTION CALLS SHOULD BE CACHED RATHER THAN FETCHING INSIDE THE FUNCTION |
 | 4   | FUNCTION GUARANTEED TO REVERT WHEN CALLED BY NORMAL USERS CAN BE MARKED `PAYABLE`      |
 | 5   | USING FUNCTION INSTEAD OF MODIFIERS CAN SAVE GAS                                       |
+| 6   | Use assembly to check for address(0)                                       |
 
 
 ## 1. <X> += <Y> COST MORE GAS THAN <X> = <X>+<Y> FOR STATE VARIABLE
@@ -35,3 +36,11 @@ If a function modifier such as onlyOwner is used, the function will revert if a 
 use function instead of modifiers if possible because it will save gas
 [DepositHook.sol#L27-L30](https://github.com/prepo-io/prepo-monorepo/blob/feat/2022-12-prepo/apps/smart-contracts/core/contracts/DepositHook.sol#L27-L30)
 [DepositRecord.sol#L18-L21](https://github.com/prepo-io/prepo-monorepo/blob/feat/2022-12-prepo/apps/smart-contracts/core/contracts/DepositRecord.sol#L18-L21)
+
+## 6. Use assembly to check for address(0)  
+using assembly can save lot of gas so it better to use assembly for address(0) check
+[Collateral.sol#L51](https://github.com/prepo-io/prepo-monorepo/blob/feat/2022-12-prepo/apps/smart-contracts/core/contracts/Collateral.sol#L51)
+[Collateral.sol#L71](https://github.com/prepo-io/prepo-monorepo/blob/feat/2022-12-prepo/apps/smart-contracts/core/contracts/Collateral.sol#L71)
+[Collateral.sol#L81](https://github.com/prepo-io/prepo-monorepo/blob/feat/2022-12-prepo/apps/smart-contracts/core/contracts/Collateral.sol#L81)
+[PrePOMarket.sol#L68](https://github.com/prepo-io/prepo-monorepo/blob/feat/2022-12-prepo/apps/smart-contracts/core/contracts/PrePOMarket.sol#L68)
+[PrePOMarket.sol#L93](https://github.com/prepo-io/prepo-monorepo/blob/feat/2022-12-prepo/apps/smart-contracts/core/contracts/PrePOMarket.sol#L93)

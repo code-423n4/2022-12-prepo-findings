@@ -1,0 +1,8 @@
+{
+  "contest": 190,
+  "handle": "rvierdiiev",
+  "risk": "2",
+  "title": "ManagerWithdrawHook.setCollateral should check that collateral.managerHook == address(this)",
+  "issueId": 182,
+  "issueUrl": "https://github.com/code-423n4/2022-12-prepo-findings/issues/182"
+}

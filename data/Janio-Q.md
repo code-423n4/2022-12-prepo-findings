@@ -101,7 +101,7 @@ The `_setRoleNominee(...) function is called by `revokeNomination(...)` and `gra
 ```
 **Recommendation:** Consider checking for `address(0)` before writing in the storage.
 
-## State Variable updated without checking for address(0)
+## State Variable updated without checking for address(0) - if the checking is included it can be done using assembly to spare more gas
 
 [`Collateral.sol#L85-L86`](https://github.com/prepo-io/prepo-monorepo/blob/3541bc704ab185a969f300e96e2f744a572a3640/apps/smart-contracts/core/contracts/Collateral.sol#L85-L86)
 ```solidity

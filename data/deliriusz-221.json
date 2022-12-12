@@ -1,0 +1,8 @@
+{
+  "contest": 190,
+  "handle": "deliriusz",
+  "risk": "2",
+  "title": "Priviledgted account can manipulate `PrePOMarket::finalLongPayout` to stop market and manipulate elligible collateralAmount",
+  "issueId": 221,
+  "issueUrl": "https://github.com/code-423n4/2022-12-prepo-findings/issues/221"
+}

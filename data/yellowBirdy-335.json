@@ -1,0 +1,8 @@
+{
+  "contest": 190,
+  "handle": "yellowBirdy",
+  "risk": "3",
+  "title": "Misconfigured or malicious MANAGER Can drain, lose or steal ALL of the collateral.",
+  "issueId": 335,
+  "issueUrl": "https://github.com/code-423n4/2022-12-prepo-findings/issues/335"
+}

@@ -1,0 +1,8 @@
+{
+  "contest": 190,
+  "handle": "caventa",
+  "risk": "2",
+  "title": "Contract that import from ReentrancyGuardUpgradeable should have  __ReentrancyGuard_init_unchained() in the initialize function",
+  "issueId": 197,
+  "issueUrl": "https://github.com/code-423n4/2022-12-prepo-findings/issues/197"
+}

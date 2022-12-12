@@ -172,4 +172,8 @@ function setTreasury(address _treasury) public override onlyRole(SET_TREASURY_RO
 ```
 **Recommendation:** Consider checking for `address(0)` before updating state variables.
 
+### Try using uint instead of bools for storage to avoid overhead
 
+[`AccountList.sol#L9`](https://github.com/prepo-io/prepo-monorepo/blob/3541bc704ab185a969f300e96e2f744a572a3640/apps/smart-contracts/core/contracts/AccountList.sol#L9)
+
+**Recommendation:** Consider using uint256(1) and uint256(2) for `true` and `false` to avoid wasting gas when changing from `false` to `true`, after having been `true` in the past

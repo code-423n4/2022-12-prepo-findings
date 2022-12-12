@@ -2,9 +2,7 @@
 
 Solidity contracts can use the Ethereum Natural Language Specification Format (NatSpec) to provide detailed documentation for functions, return variables, and other elements of the contract. This is done using a special type of comment within the contract code.
 
-Here is one occurrence of inadequate NatSpec:
-
-https://github.com/prepo-io/prepo-monorepo/blob/feat/2022-12-prepo/packages/prepo-shared-contracts/contracts/AccountListCaller.sol
+An instance of inadequate NatSpec: [AccountListCaller.sol](https://github.com/prepo-io/prepo-monorepo/blob/feat/2022-12-prepo/packages/prepo-shared-contracts/contracts/AccountListCaller.sol)
 
 Here is an example of a NatSpec comment in a Solidity contract:
 
@@ -50,7 +48,7 @@ Line 49:    * @dev This function is meant to be overriden and does not include a
 
 ---
 
-- ##   Typo 3
+- ##  Typo 3 
 
 [File: ITokenSenderCaller.sol](https://github.com/prepo-io/prepo-monorepo/blob/3541bc704ab185a969f300e96e2f744a572a3640/packages/prepo-shared-contracts/contracts/interfaces/ITokenSenderCaller.sol)
 

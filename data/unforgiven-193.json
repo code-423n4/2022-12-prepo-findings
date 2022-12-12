@@ -1,0 +1,8 @@
+{
+  "contest": 190,
+  "handle": "unforgiven",
+  "risk": "2",
+  "title": "In Collateral contract, baseTokens with low decimals can't work properly with contract if fee set as very low",
+  "issueId": 193,
+  "issueUrl": "https://github.com/code-423n4/2022-12-prepo-findings/issues/193"
+}

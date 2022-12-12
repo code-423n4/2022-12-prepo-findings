@@ -1,0 +1,8 @@
+{
+  "contest": 190,
+  "handle": "unforgiven",
+  "risk": "3",
+  "title": "function mint() in PrePOMarket shouldn't accept deposits after expiryTime of Market",
+  "issueId": 285,
+  "issueUrl": "https://github.com/code-423n4/2022-12-prepo-findings/issues/285"
+}

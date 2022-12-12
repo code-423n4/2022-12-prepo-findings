@@ -1,0 +1,8 @@
+{
+  "contest": 190,
+  "handle": "obront",
+  "risk": "2",
+  "title": "Hooks send funds to treasury without confirming that treasury is set",
+  "issueId": 258,
+  "issueUrl": "https://github.com/code-423n4/2022-12-prepo-findings/issues/258"
+}

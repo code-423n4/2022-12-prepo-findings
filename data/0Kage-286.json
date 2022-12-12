@@ -1,0 +1,8 @@
+{
+  "contest": 190,
+  "handle": "0Kage",
+  "risk": "2",
+  "title": "Access control for `hook` function in `RedeemHook` Contract is inconsistent with the implementation.",
+  "issueId": 286,
+  "issueUrl": "https://github.com/code-423n4/2022-12-prepo-findings/issues/286"
+}

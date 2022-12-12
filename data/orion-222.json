@@ -1,0 +1,8 @@
+{
+  "contest": 190,
+  "handle": "orion",
+  "risk": "3",
+  "title": "Broken access control on TokenSenderCaller contract",
+  "issueId": 222,
+  "issueUrl": "https://github.com/code-423n4/2022-12-prepo-findings/issues/222"
+}

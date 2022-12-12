@@ -1,0 +1,8 @@
+{
+  "contest": 190,
+  "handle": "rvierdiiev",
+  "risk": "3",
+  "title": "WithdrawHook.hook doesn't validate amount when lastUserPeriodReset + userPeriodLength < block.timestamp",
+  "issueId": 176,
+  "issueUrl": "https://github.com/code-423n4/2022-12-prepo-findings/issues/176"
+}

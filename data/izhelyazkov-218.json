@@ -1,0 +1,8 @@
+{
+  "contest": 190,
+  "handle": "izhelyazkov",
+  "risk": "2",
+  "title": "Centralization risk - owner can perform DoS on users which have deposited and/or can withdraw their funds.",
+  "issueId": 218,
+  "issueUrl": "https://github.com/code-423n4/2022-12-prepo-findings/issues/218"
+}

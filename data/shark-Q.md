@@ -121,3 +121,17 @@ File: `ITokenSenderCaller.sol` [Line 17](https://github.com/prepo-io/prepo-monor
 ```
   event TreasuryChange(address treasury);
 ```
+
+## 8. Unused imports
+
+Contracts that are imported and not used anywhere in the code are most likely an accident due to incomplete refactoring. Such imports can lead to confusion by readers.
+
+Here are some of the instances:
+
+`File: PrePOMarketFactory.sol` ([Line 4](https://github.com/prepo-io/prepo-monorepo/blob/feat/2022-12-prepo/apps/smart-contracts/core/contracts/PrePOMarketFactory.sol#L4), [Line 6](https://github.com/prepo-io/prepo-monorepo/blob/feat/2022-12-prepo/apps/smart-contracts/core/contracts/PrePOMarketFactory.sol#L6))
+
+```
+4: import "./LongShortToken.sol";
+
+6: import "./interfaces/ILongShortToken.sol";
+```

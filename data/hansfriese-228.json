@@ -1,0 +1,8 @@
+{
+  "contest": 190,
+  "handle": "hansfriese",
+  "risk": "2",
+  "title": "In `WithdrawHook.hook()`, withdraw limits can be bypassed.",
+  "issueId": 228,
+  "issueUrl": "https://github.com/code-423n4/2022-12-prepo-findings/issues/228"
+}

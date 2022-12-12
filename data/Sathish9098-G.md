@@ -15,6 +15,13 @@
        _;
        }
 
+[File: prepo-monorepo/apps/smart-contracts/core/contracts/WithdrawHook.sol](https://github.com/prepo-io/prepo-monorepo/blob/feat/2022-12-prepo/apps/smart-contracts/core/contracts/WithdrawHook.sol)
+
+     modifier onlyCollateral() {
+    require(msg.sender == address(collateral), "msg.sender != collateral");
+    _;
+     }
+
 ## [GAS-2]  Use assembly to check for address(0)
 
 Saves 6 gas per instance
@@ -26,6 +33,12 @@ Saves 6 gas per instance
          71:   if (address(withdrawHook) != address(0)) {
 
         51:   if (address(depositHook) != address(0)) {
+
+[File: prepo-monorepo/apps/smart-contracts/core/contracts/PrePOMarket.sol](https://github.com/prepo-io/prepo-monorepo/blob/feat/2022-12-prepo/apps/smart-contracts/core/contracts/PrePOMarket.sol)
+
+       68:   if (address(_mintHook) != address(0)) _mintHook.hook(msg.sender, _amount, _amount);
+
+       93:   if (address(_redeemHook) != address(0)) {
 
 ##
 
@@ -84,19 +97,23 @@ If both fields are accessed in the same function, can save ~42 gas per access du
 
        36:   if (globalNetDepositAmount > _amount) { globalNetDepositAmount -= _amount; }
 
+[File: prepo-monorepo/apps/smart-contracts/core/contracts/WithdrawHook.sol](https://github.com/prepo-io/prepo-monorepo/blob/feat/2022-12-prepo/apps/smart-contracts/core/contracts/WithdrawHook.sol)
+
+       71:   userToAmountWithdrawnThisPeriod[_sender] += _amountBeforeFee;
+
 ##
 
 ## [GAS-7]  Use uint256 instead uint24 . Possible to save 6 gas 
 
-(File: prepo-monorepo/apps/smart-contracts/core/contracts/DepositTradeHelper.sol)[https://github.com/prepo-io/prepo-monorepo/blob/feat/2022-12-prepo/apps/smart-contracts/core/contracts/DepositTradeHelper.sol]
+[File: prepo-monorepo/apps/smart-contracts/core/contracts/DepositTradeHelper.sol](https://github.com/prepo-io/prepo-monorepo/blob/feat/2022-12-prepo/apps/smart-contracts/core/contracts/DepositTradeHelper.sol)
 
          12:    uint24 public constant override POOL_FEE_TIER = 10000;
 
 ##
 
-## [GAS-8]  WE CAN USE ++X / --X  INSTEAD OF [Y]=X+1 OR [Y]=X-1 . LIKE THIS WAY WE CAN SAVE 116 GAS IN EXECUTION COSTS
+## [GAS-8]  WE CAN USE ++X / --X  INSTEAD OF [Y]=X+1 OR [Y]=X-1 WHEN WE INCREASE OR DECREASE BY 1 . WE CAN SAVE 116 GAS 
 
-[File: prepo-monorepo/apps/smart-contracts/core/contracts/PrePOMarket.sol] (https://github.com/prepo-io/prepo-monorepo/blob/feat/2022-12-prepo/apps/smart-contracts/core/contracts/PrePOMarket.sol)
+[File: prepo-monorepo/apps/smart-contracts/core/contracts/PrePOMarket.sol](https://github.com/prepo-io/prepo-monorepo/blob/feat/2022-12-prepo/apps/smart-contracts/core/contracts/PrePOMarket.sol)
 
     55:     finalLongPayout = MAX_PAYOUT + 1;
 
@@ -123,9 +140,4 @@ If both fields are accessed in the same function, can save ~42 gas per access du
 
 
 
-GAS-1	Using bools for storage incurs overhead	4
-GAS-2	Use Custom Errors	37
-GAS-3	Don't initialize variables with default value	3
-GAS-4	Using private rather than public for constants, saves gas	40
-GAS-5	Use != 0 instead of > 0 for unsigned integer comparison	15
 

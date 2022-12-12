@@ -1,0 +1,8 @@
+{
+  "contest": 190,
+  "handle": "rvierdiiev",
+  "risk": "2",
+  "title": "Protocol don't check bool result of ERC20 transfer functions",
+  "issueId": 155,
+  "issueUrl": "https://github.com/code-423n4/2022-12-prepo-findings/issues/155"
+}

@@ -1,0 +1,8 @@
+{
+  "contest": 190,
+  "handle": "unforgiven",
+  "risk": "2",
+  "title": "different profit calculation for users in PrePOMarket if owner calls setFinalLongPayout() two times. function setFinalLongPayout() should be called when market is closing and it should only be called once ",
+  "issueId": 203,
+  "issueUrl": "https://github.com/code-423n4/2022-12-prepo-findings/issues/203"
+}

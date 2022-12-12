@@ -136,3 +136,14 @@ import {IDepositRecord} from "./interfaces/IDepositRecord.sol";
 import {TokenSenderCaller} from "prepo-shared-contracts/contracts/TokenSenderCaller.sol";
 import {SafeAccessControlEnumerable} from "prepo-shared-contracts/contracts/SafeAccessControlEnumerable.sol";
 ```
+## Two-step transfer of ownership
+When setting a new owner, it is entirely possible to accidentally transfer ownership to an uncontrolled and/or non-valid account, breaking all function calls associated with the modifier, `onlyOwner`. Consider implementing a two step process where the current owner nominates an account that would need to call acceptOwnership() for the transfer of ownership to fully succeed. This will also ensure the new owner is going to be fully aware of the ownership assigned/transferred.
+
+Here are some of the instances entailed:
+
+[File: PrePOMarketFactory.sol#L31-L32](https://github.com/prepo-io/prepo-monorepo/blob/feat/2022-12-prepo/apps/smart-contracts/core/contracts/PrePOMarketFactory.sol#L31-L32)
+
+```
+    _longToken.transferOwnership(address(_newMarket));
+    _shortToken.transferOwnership(address(_newMarket));
+```

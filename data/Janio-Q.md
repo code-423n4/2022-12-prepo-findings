@@ -46,6 +46,34 @@ Interface: apps/smart-contracts/core/contracts/interfaces/ILongShortToken.sol
 
 ---
 
+## State variable is written after the external calls
+
+In `deposit(...) function the external calls comes before `_mint()`. 
+
+```solidity
+  function deposit(address _recipient, uint256 _amount) external override nonReentrant returns (uint256) {
+    uint256 _fee = (_amount * depositFee) / FEE_DENOMINATOR;
+    if (depositFee > 0) { require(_fee > 0, "fee = 0"); }
+    else { require(_amount > 0, "amount = 0"); }
+    baseToken.transferFrom(msg.sender, address(this), _amount);
+    uint256 _amountAfterFee = _amount - _fee;
+    if (address(depositHook) != address(0)) {
+      baseToken.approve(address(depositHook), _fee);
+      depositHook.hook(_recipient, _amount, _amountAfterFee);
+      baseToken.approve(address(depositHook), 0);
+    }
+    /// Converts amount after fee from base token units to collateral token units.
+    uint256 _collateralMintAmount = (_amountAfterFee * 1e18) / baseTokenDenominator;
+    _mint(_recipient, _collateralMintAmount);
+    emit Deposit(_recipient, _amountAfterFee, _fee);
+    return _collateralMintAmount;
+  }
+```
+
+**Recommendation:** As good practice, consider applying Check-Effects-Interactions Pattern by calling `_mint(...)` before `. This change does not require heavy refactoring.
+
+---
+
 ## Missing checks for `address(0)` for `_account` address
 
 The `_setRoleNominee(...) function is called by `revokeNomination(...)` and `grantRole(...)` functions. However, there is no checking for `address(0)` as presented in the code below:

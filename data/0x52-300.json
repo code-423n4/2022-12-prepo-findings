@@ -1,0 +1,8 @@
+{
+  "contest": 190,
+  "handle": "0x52",
+  "risk": "3",
+  "title": "Long and short tokens can continue to be minted even after expiry",
+  "issueId": 300,
+  "issueUrl": "https://github.com/code-423n4/2022-12-prepo-findings/issues/300"
+}

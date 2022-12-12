@@ -1,0 +1,8 @@
+{
+  "contest": 190,
+  "handle": "jadezti",
+  "risk": "2",
+  "title": "Irrelevant error message from `Collateral.withdraw()` worries users",
+  "issueId": 268,
+  "issueUrl": "https://github.com/code-423n4/2022-12-prepo-findings/issues/268"
+}

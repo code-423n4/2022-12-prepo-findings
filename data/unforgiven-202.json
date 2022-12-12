@@ -1,0 +1,8 @@
+{
+  "contest": 190,
+  "handle": "unforgiven",
+  "risk": "2",
+  "title": "globalNetDepositAmount can't track real amount of deposits and withdraws when withdrawHook or depositHook is 0x0 in Collatral, which would cause manager to over withdraw or under withdraw than MinReserve constraint",
+  "issueId": 202,
+  "issueUrl": "https://github.com/code-423n4/2022-12-prepo-findings/issues/202"
+}

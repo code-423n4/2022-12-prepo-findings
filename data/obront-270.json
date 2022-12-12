@@ -1,0 +1,8 @@
+{
+  "contest": 190,
+  "handle": "obront",
+  "risk": "2",
+  "title": "User fee refunds will silently fail if _priceMultiplier isn't set",
+  "issueId": 270,
+  "issueUrl": "https://github.com/code-423n4/2022-12-prepo-findings/issues/270"
+}

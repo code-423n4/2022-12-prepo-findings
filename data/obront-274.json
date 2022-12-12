@@ -1,0 +1,8 @@
+{
+  "contest": 190,
+  "handle": "obront",
+  "risk": "2",
+  "title": "TokenSender fails silently if it doesn't have enough PPO balance to refund",
+  "issueId": 274,
+  "issueUrl": "https://github.com/code-423n4/2022-12-prepo-findings/issues/274"
+}

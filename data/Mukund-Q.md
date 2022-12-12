@@ -8,6 +8,9 @@
 | 4   | File is missing NatSpec      |
 | 5   | USE NAMED IMPORTS INSTEAD OF PLAIN `IMPORT ‘FILE.SOL’                                       |
 | 6   | INITIALIZE() FUNCTION CAN BE CALLED BY ANYBODY                                       |
+|7    | Contracts are not using their OZ Upgradeable counterparts    |
+|8    | USE NAMED IMPORTS INSTEAD OF PLAIN `IMPORT ‘FILE.SOL’ |
+
 
 ## 1. Unsafe use of transfer()/transferFrom()
 Use openzeppelin safeERC20 library instead because some token may not revert in case of failure and may cause loss of funds so its better to use `safeTransfer()`/`safeTransferFrom()`
@@ -49,3 +52,16 @@ for example use it like  ` import {Ownable} from "@openzeppelin/contracts/access
 [PrePOMarketFactory.sol#L16](https://github.com/prepo-io/prepo-monorepo/blob/feat/2022-12-prepo/apps/smart-contracts/core/contracts/PrePOMarketFactory.sol#L16)
 [Collateral.sol#L34-L38](https://github.com/prepo-io/prepo-monorepo/blob/feat/2022-12-prepo/apps/smart-contracts/core/contracts/Collateral.sol#L34-L38)
 
+## 7. Contracts are not using their OZ Upgradeable counterparts     
+The non-upgradeable standard version of OpenZeppelin’s library are inherited / used by the contracts.
+It would be safer to use the upgradeable versions of the library contracts to avoid unexpected behaviour.
+
+[DepositHook.sol#L10](https://github.com/prepo-io/prepo-monorepo/blob/feat/2022-12-prepo/apps/smart-contracts/core/contracts/DepositHook.sol#L10)
+[DepositTradeHelper.sol#L6](https://github.com/prepo-io/prepo-monorepo/blob/feat/2022-12-prepo/apps/smart-contracts/core/contracts/DepositTradeHelper.sol#L6)
+[LongShortToken.sol#L4-L6](https://github.com/prepo-io/prepo-monorepo/blob/feat/2022-12-prepo/apps/smart-contracts/core/contracts/LongShortToken.sol#L4-L6)
+
+## 8. USE NAMED IMPORTS INSTEAD OF PLAIN `IMPORT ‘FILE.SOL’ 
+for example use it like import `{Ownable} from "@openzeppelin/contracts/access/Ownable.sol";`
+[DepositHook.sol#L4-L10](https://github.com/prepo-io/prepo-monorepo/blob/feat/2022-12-prepo/apps/smart-contracts/core/contracts/DepositHook.sol#L4-L10)
+[Collateral.sol#L4-L7](https://github.com/prepo-io/prepo-monorepo/blob/feat/2022-12-prepo/apps/smart-contracts/core/contracts/Collateral.sol#L4-L7)
+[DepositRecord.sol#L4-L5](https://github.com/prepo-io/prepo-monorepo/blob/feat/2022-12-prepo/apps/smart-contra

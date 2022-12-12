@@ -1,0 +1,8 @@
+{
+  "contest": 190,
+  "handle": "ak1",
+  "risk": "2",
+  "title": "PrePOMarketFactory.sol : createMarket is allowing to create market that is already created",
+  "issueId": 247,
+  "issueUrl": "https://github.com/code-423n4/2022-12-prepo-findings/issues/247"
+}

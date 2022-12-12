@@ -1,0 +1,8 @@
+{
+  "contest": 190,
+  "handle": "hansfriese",
+  "risk": "2",
+  "title": "`Collateral.managerWithdraw()` can be used to withdraw all base tokens by the admin",
+  "issueId": 227,
+  "issueUrl": "https://github.com/code-423n4/2022-12-prepo-findings/issues/227"
+}

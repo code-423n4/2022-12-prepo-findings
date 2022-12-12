@@ -1,0 +1,8 @@
+{
+  "contest": 190,
+  "handle": "obront",
+  "risk": "2",
+  "title": "Collateral deposit function can break when fee is amount are too small",
+  "issueId": 248,
+  "issueUrl": "https://github.com/code-423n4/2022-12-prepo-findings/issues/248"
+}

@@ -1,6 +1,6 @@
-## Shadow Local Variable 
+## Shadow Local Variables 
 
-The local variable `_treasury` in the `RedeemHook.setTreasury(_treasury)`  function is shadowing the state variable `_treasury` in the contract `TokenSenderCaller`.
+The `TokenSenderCaller` contract contains two state variables as described below:
 
 ```solidity
 //file: prepo-monorepo-feat-2022-12-prepo/packages/prepo-shared-contracts/contracts/TokenSenderCaller.sol
@@ -12,13 +12,25 @@ contract TokenSenderCaller is ITokenSenderCaller {
 }
 ```
 
+The local variable `_treasury` in the `RedeemHook.setTreasury(_treasury)`  function is shadowing the state variable `_treasury` in the contract `TokenSenderCaller`.
+
 ```solidity
-//file: prepo-monorepo-feat-2022-12-prepo/apps/smart-contracts/core/contracts/RedeemHook.sol
+//file: apps/smart-contracts/core/contracts/RedeemHook.sol
 function setTreasury(address _treasury) public override onlyOwner { super.setTreasury(_treasury); }
 ```
 
-**Recommended Mitigation Steps**
-Consider renaming the `_treasury` local variable that shadows the `_treasury` state variable.
+Similarly, the local variables `_treasury` and `_tokenSender` in `DepositHook` contract are shadowing the state variables `_treasury`  and `_tokenSender` in `TokenSenderCaller` contract.
+
+
+```solidity
+//file: apps/smart-contracts/core/contracts/DepositHook.sol
+function setTreasury(address _treasury) public override onlyRole(SET_TREASURY_ROLE) { super.setTreasury(_treasury); }
+
+function setTokenSender(ITokenSender _tokenSender) public override onlyRole(SET_TOKEN_SENDER_ROLE) { super.setTokenSender(_tokenSender); }
+
+```
+
+**Recommendation:** Consider renaming the `_treasury` local variable that shadows the `_treasury` state variable.
 
 ## Missing inheritance
 
@@ -59,4 +71,4 @@ The `_setRoleNominee(...) function is called by `revokeNomination(...)` and `gra
     emit RoleNomineeUpdate(_role, _account, _nominationStatus);
   }
 ```
-Consider checking for `address(0)` before writing in the storage.
+**Recommendation:** Consider checking for `address(0)` before writing in the storage.

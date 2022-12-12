@@ -1,0 +1,8 @@
+{
+  "contest": 190,
+  "handle": "neumo",
+  "risk": "3",
+  "title": "Users can get free collateral when using non-reverting on failure baseTokens",
+  "issueId": 329,
+  "issueUrl": "https://github.com/code-423n4/2022-12-prepo-findings/issues/329"
+}

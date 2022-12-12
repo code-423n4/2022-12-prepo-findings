@@ -1,0 +1,8 @@
+{
+  "contest": 190,
+  "handle": "rvierdiiev",
+  "risk": "2",
+  "title": "LongShortToken is ERC20Burnable and user can burn his tokens mistakenly",
+  "issueId": 189,
+  "issueUrl": "https://github.com/code-423n4/2022-12-prepo-findings/issues/189"
+}

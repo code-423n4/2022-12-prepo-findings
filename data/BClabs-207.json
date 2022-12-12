@@ -1,0 +1,8 @@
+{
+  "contest": 190,
+  "handle": "BClabs",
+  "risk": "3",
+  "title": "User with MANAGER_WITHDRAW_ROLE can withdraw the whole balance",
+  "issueId": 207,
+  "issueUrl": "https://github.com/code-423n4/2022-12-prepo-findings/issues/207"
+}

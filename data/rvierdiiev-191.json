@@ -1,0 +1,8 @@
+{
+  "contest": 190,
+  "handle": "rvierdiiev",
+  "risk": "2",
+  "title": "PrePOMarket.setRedemptionFee don't give users time to react.",
+  "issueId": 191,
+  "issueUrl": "https://github.com/code-423n4/2022-12-prepo-findings/issues/191"
+}

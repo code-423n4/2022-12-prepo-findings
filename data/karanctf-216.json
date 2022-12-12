@@ -1,0 +1,8 @@
+{
+  "contest": 190,
+  "handle": "karanctf",
+  "risk": "2",
+  "title": "In `collatral.sol` deposit funciton doesn't check for `_recipient` address to be 0 ",
+  "issueId": 216,
+  "issueUrl": "https://github.com/code-423n4/2022-12-prepo-findings/issues/216"
+}

@@ -112,6 +112,527 @@ https://github.com/prepo-io/prepo-monorepo/blob/feat/2022-12-prepo/apps/smart-co
 
 ### natSpec missing
 
+https://github.com/prepo-io/prepo-monorepo/blob/feat/2022-12-prepo/apps/smart-contracts/token/contracts/ppo/RestrictedTransferHook.sol
+
+```solidity
+7:  contract RestrictedTransferHook is
+
+16:  function hook(
+
+26:  function setSourceAllowlist(IAccountList _newSourceAllowlist)
+
+35:  function setDestinationAllowlist(IAccountList _newDestinationAllowlist)
+
+44:  function getSourceAllowlist() external view override returns (IAccountList) {
+
+48:  function getDestinationAllowlist()
+```
+
+https://github.com/prepo-io/prepo-monorepo/blob/feat/2022-12-prepo/apps/smart-contracts/token/contracts/ppo/PPO.sol
+
+```solidity
+45:   contract PPO is
+
+53:  function initialize(string memory _name, string memory _symbol)
+
+62:  function setTransferHook(ITransferHook _newTransferHook)
+
+70:  function mint(address _recipient, uint256 _amount)
+
+78:  function burn(uint256 _amount)
+
+85:  function burnFrom(address _account, uint256 _amount)
+
+92:  function transferFromWithPermit(
+
+105:  function getTransferHook() external view override returns (ITransferHook) {
+
+109:  function _beforeTokenTransfer(
+```
+
+https://github.com/prepo-io/prepo-monorepo/blob/feat/2022-12-prepo/apps/smart-contracts/token/contracts/ppo/BlocklistTransferHook.sol
+
+```solidity
+7:  contract BlocklistTransferHook is IBlocklistTransferHook, SafeOwnable {
+
+12:  function hook(
+
+22:  function setBlocklist(IAccountList _newBlocklist)
+
+31:  function getBlocklist() external view override returns (IAccountList) {
+```
+
+
+https://github.com/prepo-io/prepo-monorepo/blob/feat/2022-12-prepo/apps/smart-contracts/token/contracts/ppo/AccountList.sol
+
+```solidity
+7:  contract AccountList is IAccountList, SafeOwnable {
+
+14:  function set(address[] calldata _accounts, bool[] calldata _included)
+
+29:  function reset(address[] calldata _newIncludedAccounts)
+
+46:  function isIncluded(address _account) external view override returns (bool) {
+```
+
+https://github.com/prepo-io/prepo-monorepo/blob/feat/2022-12-prepo/apps/smart-contracts/token/contracts/pregenesis/PregenesisPoints.sol
+
+```solidity
+10:  contract PregenesisPoints is
+
+20:  constructor(string memory _name, string memory _symbol)
+
+24:  function setShop(address _newShop) external override onlyOwner {
+
+28:  function setMerkleTreeRoot(bytes32 _newRoot) external override onlyOwner {
+
+32:  function mint(address _to, uint256 _amount) external override onlyOwner {
+
+36:  function burn(address _account, uint256 _amount)
+
+44:  function claim(uint256 _amount, bytes32[] memory _proof)
+
+57:  function getShop() external view override returns (address) {
+
+61:  function getMerkleTreeRoot() external view override returns (bytes32) {
+
+65:  function hasClaimed(address _account) external view override returns (bool) {
+
+69:  function _beforeTokenTransfer(
+
+```
+
+https://github.com/prepo-io/prepo-monorepo/blob/feat/2022-12-prepo/apps/smart-contracts/token/contracts/pregenesis/PregenPass.sol
+
+```solidity
+11:  constructor(string memory _newURI) ERC721("Pregen Pass", "PREGENPASS") {
+
+15:  function setURI(string memory _newURI) external onlyOwner {
+
+19:  function mint(address _to) external {
+
+23:  function mintBatch(address[] memory _accounts) external {
+
+32:  function burn(uint256 _tokenId) external {
+
+36:  function burnBatch(uint256[] memory _tokenIds) external {
+
+43:  function tokenURI(uint256) public view override returns (string memory) {
+
+47:  function _beforeTokenTransfer(
+
+
+```
+
+https://github.com/prepo-io/prepo-monorepo/blob/feat/2022-12-prepo/apps/smart-contracts/token/contracts/token-shop/TokenShop.sol
+
+```solidity
+15:  contract TokenShop is
+
+32:  constructor(address _newPaymentToken) {
+
+36:  function setContractToIdToPrice(
+
+55:  function setPurchaseHook(address _newPurchaseHook)
+
+63:  function purchase(
+
+123:  function getPrice(address _tokenContract, uint256 _id)
+
+132:  function getPaymentToken() external view override returns (address) {
+
+136:  function getPurchaseHook() external view override returns (IPurchaseHook) {
+
+140:  function getERC721PurchaseCount(address _user, address _tokenContract)
+
+149:  function getERC1155PurchaseCount(
+
+157:  function onERC721Received(
+```
+
+https://github.com/prepo-io/prepo-monorepo/blob/feat/2022-12-prepo/apps/smart-contracts/token/contracts/token-shop/PurchaseHook.sol
+
+```solidity
+8:  contract PurchaseHook is IPurchaseHook, SafeOwnable {
+
+32:  function hookERC1155(
+
+53:  function setTokenShop(address _newTokenShop) external override onlyOwner {
+
+57:  function setMaxERC721PurchasesPerUser(
+
+71:  function setMaxERC1155PurchasesPerUser(
+
+89:  function getMaxERC721PurchasesPerUser(address _tokenContract)
+
+98:  function getMaxERC1155PurchasesPerUser(address _tokenContract, uint256 _id)
+
+107:  function getTokenShop() external view override returns (ITokenShop) {
+```
+
+
+https://github.com/prepo-io/prepo-monorepo/blob/feat/2022-12-prepo/apps/smart-contracts/token/contracts/vesting/mocks/MockVestingClaimer.sol
+
+```solidity
+6:  contract MockVestingClaimer {
+
+7:  Vesting private vesting;
+
+9:  constructor(address _newVesting) {
+
+13: function claimFunds() external {
+
+```
+
+https://github.com/prepo-io/prepo-monorepo/blob/feat/2022-12-prepo/apps/smart-contracts/token/contracts/vesting/Vesting.sol
+
+```solidity
+23:  function setToken(address _newToken) external override onlyOwner {
+
+27:  function setVestingStartTime(uint256 _newVestingStartTime)
+
+39:  function setVestingEndTime(uint256 _newVestingEndTime)
+
+51:  function setAllocations(
+
+86:  function claim() external override nonReentrant whenNotPaused {
+
+99:  function getClaimableAmount(address _recipient)
+
+114:  function getVestedAmount(address _recipient)
+
+129:  function getToken() external view override returns (address) {
+
+133:  function getVestingStartTime() external view override returns (uint256) {
+
+137:  function getVestingEndTime() external view override returns (uint256) {
+
+141:  function getAmountAllocated(address _recipient)
+
+150:  function getTotalAllocatedSupply() external view override returns (uint256) {
+
+154:  function getClaimedAmount(address _recipient)
+```
+
+https://github.com/prepo-io/prepo-monorepo/blob/feat/2022-12-prepo/apps/smart-contracts/token/contracts/vesting/Vesting.sol
+
+```solidity
+23:  function setToken(address _newToken) external override onlyOwner {
+
+27:  function setVestingStartTime(uint256 _newVestingStartTime)
+
+39:  function setVestingEndTime(uint256 _newVestingEndTime)
+
+51:  function setAllocations(
+
+114:  function getVestedAmount(address _recipient)
+
+129:  function getToken() external view override returns (address) {
+
+133:  function getVestingStartTime() external view override returns (uint256) {
+
+137:  function getVestingEndTime() external view override returns (uint256) {
+
+141:  function getAmountAllocated(address _recipient)
+
+150:  function getTotalAllocatedSupply() external view override returns (uint256) {
+
+154:  function getClaimedAmount(address _recipient)
+```
+
+https://github.com/prepo-io/prepo-monorepo/blob/feat/2022-12-prepo/apps/smart-contracts/token/contracts/ppo-staking/masset/versions/MV2.sol
+
+```solidity
+39:  event Minted(
+
+46:  event MintedMulti(
+
+53:  event Swapped(
+
+61:  event Redeemed(
+
+69:  event RedeemedMulti(
+
+79:  event CacheSizeChanged(uint256 cacheSize);
+
+80:  event FeesChanged(uint256 swapFee, uint256 redemptionFee);
+
+81:  event WeightLimitsChanged(uint128 min, uint128 max);
+
+82:  event ForgeValidatorChanged(address forgeValidator);
+
+83:  event DeficitMinted(uint256 amt);
+
+84:  event SurplusBurned(address creditor, uint256 amt);
+
+
+```
+
+
+https://github.com/prepo-io/prepo-monorepo/blob/feat/2022-12-prepo/apps/smart-contracts/token/contracts/ppo-staking/masset/versions/MV1.sol
+
+```solidity
+53:  event MintedMulti(
+
+60:  event Swapped(
+
+68:  event Redeemed(
+
+76:  event RedeemedMulti(
+
+86:  event CacheSizeChanged(uint256 cacheSize);
+
+87:  event FeesChanged(uint256 swapFee, uint256 redemptionFee);
+
+88:  event WeightLimitsChanged(uint128 min, uint128 max);
+
+89:  event ForgeValidatorChanged(address forgeValidator);
+
+90:  event DeficitMinted(uint256 amt);
+
+91:  event SurplusBurned(address creditor, uint256 amt);
+
+
+```
+
+https://github.com/prepo-io/prepo-monorepo/blob/feat/2022-12-prepo/apps/smart-contracts/token/contracts/ppo-staking/masset/MassetStructs.sol
+
+```solidity
+36:   struct BasketState {
+
+41:   struct FeederConfig {
+
+47:   struct InvariantConfig {
+
+54:   struct BasicConfig {
+
+59:   struct WeightLimits {
+
+64:   struct AmpData {
+
+71:   struct FeederData {
+
+83:   struct MassetData {
+
+95:   struct AssetData {
+
+101:  struct Asset {
+```
+
+https://github.com/prepo-io/prepo-monorepo/blob/feat/2022-12-prepo/apps/smart-contracts/token/contracts/ppo-staking/masset/MassetManager.sol
+
+```solidity
+32:  event BassetsMigrated(address[] bAssets, address newIntegrator);
+
+33:  event TransferFeeEnabled(address indexed bAsset, bool enabled);
+
+34:  event BassetAdded(address indexed bAsset, address integrator);
+
+35:  event BassetStatusChanged(address indexed bAsset, BassetStatus status);
+
+36:  event BasketStatusChanged();
+
+37:  event StartRampA(
+
+43:  event StopRampA(uint256 currentA, uint256 time);
+```
+
+https://github.com/prepo-io/prepo-monorepo/blob/feat/2022-12-prepo/apps/smart-contracts/token/contracts/ppo-staking/masset/Masset.sol
+
+```solidity
+39:  event Minted(
+
+46:  event MintedMulti(
+
+53:  event Swapped(
+
+61:  event Redeemed(
+
+69:  event RedeemedMulti(
+
+79:  event CacheSizeChanged(uint256 cacheSize);
+
+80:  event FeesChanged(uint256 swapFee, uint256 redemptionFee);
+
+81:  event WeightLimitsChanged(uint128 min, uint128 max);
+
+82:  event ForgeValidatorChanged(address forgeValidator);
+
+83:  event DeficitMinted(uint256 amt);
+
+84:  event SurplusBurned(address creditor, uint256 amt);
+
+```
+
+
+https://github.com/prepo-io/prepo-monorepo/blob/feat/2022-12-prepo/apps/smart-contracts/token/contracts/ppo-staking/nexus/Nexus.sol
+
+```solidity
+18:  event ModuleProposed(bytes32 indexed key, address addr, uint256 timestamp);
+
+19:  event ModuleAdded(bytes32 indexed key, address addr, bool isLocked);
+
+20:  event ModuleCancelled(bytes32 indexed key);
+
+21:  event ModuleLockRequested(bytes32 indexed key, uint256 timestamp);
+
+22:  event ModuleLockEnabled(bytes32 indexed key);
+
+23:  event ModuleLockCancelled(bytes32 indexed key);
+
+```
+
+https://github.com/prepo-io/prepo-monorepo/blob/feat/2022-12-prepo/apps/smart-contracts/token/contracts/ppo-staking/savings/SavingsManager.sol
+
+```solidity
+33:  event SavingsContractAdded(address indexed mAsset, address savingsContract);
+
+34:  event SavingsContractUpdated(
+
+38:  event SavingsRateChanged(uint256 newSavingsRate);
+
+39:  event StreamsFrozen();
+
+42:  event InterestCollected(
+
+48:  event InterestDistributed(address indexed mAsset, uint256 amountSent);
+
+49:  event RevenueRedistributed(
+
+78:  enum StreamType {
+
+83:  struct Stream {
+
+88:  constructor(
+
+114:  modifier onlyLiquidator() {
+
+119:  modifier whenStreamsNotFrozen() {
+
+162:  function _updateSavingsContract(address _mAsset, address _savingsContract)
+```
+
+https://github.com/prepo-io/prepo-monorepo/blob/feat/2022-12-prepo/apps/smart-contracts/token/contracts/ppo-staking/savings/SavingsContract.sol
+
+```solidity
+42:   event SavingsDeposited(
+
+47:  event CreditsRedeemed(
+
+53:  event AutomaticInterestCollectionSwitched(bool automationEnabled);
+
+58:  event FractionUpdated(uint256 fraction);
+
+59:  event ConnectorUpdated(address connector);
+
+60:  event EmergencyUpdate();
+
+62:  event Poked(
+
+67:  event PokedRaw();
+
+105:  constructor(
+
+783:  struct CachedData {
+
+
+```
+
+https://github.com/prepo-io/prepo-monorepo/blob/feat/2022-12-prepo/apps/smart-contracts/token/contracts/ppo-staking/mocks/MockAchievementsManager.sol
+
+```solidity
+6:   contract MockAchievementsManager is IAchievementsManager {
+
+7:   constructor() {}
+
+9:   function checkForSeasonFinish(address _account)
+```
+
+https://github.com/prepo-io/prepo-monorepo/blob/feat/2022-12-prepo/apps/smart-contracts/token/contracts/ppo-staking/mocks/MockPPOStaking.sol
+
+```solidity
+6:    contract MockPPOStaking is PPOStaking {
+
+7:  constructor(
+
+25:  function __mockPPOStaking_init(address _newRewardsDistributor) public {
+```
+
+
+https://github.com/prepo-io/prepo-monorepo/blob/feat/2022-12-prepo/apps/smart-contracts/token/contracts/ppo-staking/mocks/MockPPOGamifiedToken.sol
+
+```solidity
+6:   contract MockPPOGamifiedToken is PPOGamifiedToken {
+
+7:   constructor(
+
+13:  function __mockPPOGamifiedToken_init(
+
+21:  function totalSupply() public view override returns (uint256) {
+
+25:  function getScaledBalance(Balance memory _balance)
+
+33:  function setAchievementsManager(address _newAchievementsManager) external {
+
+37:  function writeBalance(address _account, Balance memory _newBalance)
+
+43:  function enterCooldownPeriod(address _account, uint256 _units) external {
+
+47:  function exitCooldownPeriod(address _account) external {
+
+51:  function mintRaw(
+
+59:  function burnRaw(
+
+
+```
+
+https://github.com/prepo-io/prepo-monorepo/blob/feat/2022-12-prepo/apps/smart-contracts/token/contracts/ppo-staking/rewards/staking/StakingRewardsDistribution.sol
+
+```solidity
+10:   contract StakingRewardsDistribution is
+
+20:  function setPPOStaking(address _newPPOStaking) external override onlyOwner {
+
+24:  function setMerkleTreeRoot(bytes32 _newRoot) external override onlyOwner {
+
+29:  function claim(
+
+46:  function getPPOStaking() external view override returns (address) {
+
+50:  function getMerkleTreeRoot() external view override returns (bytes32) {
+
+54:  function getPeriodNumber() external view override returns (uint256) {
+
+58:  function hasClaimed(address _user) external view override returns (bool) {
+
+62:  function _getUserPeriodHash(address _user) private view returns (uint256) {
+
+
+```
+
+https://github.com/prepo-io/prepo-monorepo/blob/feat/2022-12-prepo/apps/smart-contracts/token/contracts/ppo-staking/rewards/staking/HeadlessStakingRewards.sol
+
+```solidity
+53:  struct UserData {
+
+98:  function _updateReward(address _account) internal {
+
+138:  function _claimReward(address _to) internal updateReward(_msgSender()) {
+
+176:  function _rewardPerToken()
+
+216:  function _earned(address _account, uint256 _currentRewardPerToken)
+
+238:  function balanceOf(address account) public view virtual returns (uint256);
+
+240:  function totalSupply() public view virtual returns (uint256);
+
+242:  function _claimRewardHook(address account) internal virtual;
+
+
+```
+
 https://github.com/prepo-io/prepo-monorepo/blob/feat/2022-12-prepo/apps/smart-contracts/token/contracts/ppo-staking/interfaces/IVotiumBribe.sol
 
 ```solidity
@@ -833,6 +1354,101 @@ https://github.com/prepo-io/prepo-monorepo/blob/feat/2022-12-prepo/apps/smart-co
   - private and internal `variables` should preppend with `underline`
   - private and internal `functions` should preppend with `underline`
   - constant state variables should be UPPER_CASE
+
+https://github.com/prepo-io/prepo-monorepo/blob/feat/2022-12-prepo/apps/smart-contracts/token/contracts/ppo/RestrictedTransferHook.sol
+
+```solidity
+11:  IAccountList private sourceAllowlist;
+
+12:  IAccountList private destinationAllowlist;
+
+
+
+https://github.com/prepo-io/prepo-monorepo/blob/feat/2022-12-prepo/apps/smart-contracts/token/contracts/ppo/AccountList.sol
+
+```solidity
+8:  uint256 private resetIndex;
+```
+
+https://github.com/prepo-io/prepo-monorepo/blob/feat/2022-12-prepo/apps/smart-contracts/token/contracts/pregenesis/PregenesisPoints.sol
+
+```solidity
+16:  address private shop;
+
+17:  bytes32 private root;
+```
+
+https://github.com/prepo-io/prepo-monorepo/blob/feat/2022-12-prepo/apps/smart-contracts/token/contracts/pregenesis/PregenPass.sol
+
+```solidity
+8:  uint256 private id;
+
+9:  string private uri;
+```
+
+https://github.com/prepo-io/prepo-monorepo/blob/feat/2022-12-prepo/apps/smart-contracts/token/contracts/token-shop/TokenShop.sol
+
+```solidity
+24:  IERC20 private paymentToken;
+
+25:  IPurchaseHook private purchaseHook;
+
+26:  mapping(address => mapping(uint256 => uint256)) private contractToIdToPrice;
+
+27:  mapping(address => mapping(address => uint256))
+
+29:  mapping(address => mapping(address => mapping(uint256 => uint256)))
+```
+
+https://github.com/prepo-io/prepo-monorepo/blob/feat/2022-12-prepo/apps/smart-contracts/token/contracts/token-shop/PurchaseHook.sol
+
+```solidity
+9:  mapping(address => uint256) private erc721ToMaxPurchasesPerUser;
+
+10:  mapping(address => mapping(uint256 => uint256))
+
+12:  ITokenShop private tokenShop;
+```
+
+https://github.com/prepo-io/prepo-monorepo/blob/feat/2022-12-prepo/apps/smart-contracts/token/contracts/vesting/Vesting.sol
+
+```solidity
+12:  IERC20 private token;
+
+13:  uint256 private vestingStartTime;
+
+14:  uint256 private vestingEndTime;
+
+16:  mapping(address => uint256) private recipientToAllocatedAmount;
+
+17:  mapping(address => uint256) private recipientToClaimedAmount;
+
+19:  uint256 private totalAllocatedSupply;
+```
+
+https://github.com/prepo-io/prepo-monorepo/blob/feat/2022-12-prepo/apps/smart-contracts/token/contracts/ppo-staking/masset/versions/MV2.sol
+
+```solidity
+87:  bool private deprecated_forgeValidatorLocked;
+
+89:  address private deprecated_basketManager;
+```
+
+https://github.com/prepo-io/prepo-monorepo/blob/feat/2022-12-prepo/apps/smart-contracts/token/contracts/ppo-staking/savings/SavingsManager.sol
+
+```solidity
+64:  uint256 private savingsRate;
+
+70:  bool private streamsFrozen = false;
+```
+
+https://github.com/prepo-io/prepo-monorepo/blob/feat/2022-12-prepo/apps/smart-contracts/token/contracts/ppo-staking/savings/SavingsContract.sol
+
+```solidity
+79:  uint256 private constant startingRate = 1e17;
+
+84:  bool private automateInterestCollection;
+```
 
 https://github.com/prepo-io/prepo-monorepo/blob/feat/2022-12-prepo/apps/smart-contracts/token/contracts/ppo-staking/governance/staking/GamifiedToken.sol
 

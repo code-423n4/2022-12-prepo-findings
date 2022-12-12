@@ -2,10 +2,6 @@
 
 The local variable `_treasury` in the `RedeemHook.setTreasury(_treasury)`  function is shadowing the state variable `_treasury` in the contract `TokenSenderCaller`.
 
-## Proof of Concept
-
-
-
 ```solidity
 //file: prepo-monorepo-feat-2022-12-prepo/packages/prepo-shared-contracts/contracts/TokenSenderCaller.sol
 contract TokenSenderCaller is ITokenSenderCaller {
@@ -21,12 +17,27 @@ contract TokenSenderCaller is ITokenSenderCaller {
 function setTreasury(address _treasury) public override onlyOwner { super.setTreasury(_treasury); }
 ```
 
-## Recommended Mitigation Steps
-Consider renaming the `_treasury` local variable that shadow the `_treasury` state variable.
+**Recommended Mitigation Steps**
+Consider renaming the `_treasury` local variable that shadows the `_treasury` state variable.
+
+---
+
+## Missing inheritance
+
+`LongShortToken` should inherit from `ILongShortToken`.
+
+```
+Contract: apps/smart-contracts/core/contracts/LongShortToken.sol
+
+Interface: apps/smart-contracts/core/contracts/interfaces/ILongShortToken.sol
+```
+
+**Recomendation:** Consider inheriting from the missing interface.
 
 
 
-## Missing checks for `address(0)` for `_governance` local variable when calls `transferOwnership(_governance)`.
+---
+## Missing checks for `address(0)` for `_account` address
 
 The `_setRoleNominee(...) function is called by `revokeNomination(...)` and `grantRole(...)` functions. However, there is no checking for `address(0)` as presented in the code below:
 

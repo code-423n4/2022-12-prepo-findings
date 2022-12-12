@@ -1,0 +1,8 @@
+{
+  "contest": 190,
+  "handle": "rvierdiiev",
+  "risk": "2",
+  "title": "Collateral.managerWithdraw will burn tokens in case manager is not set",
+  "issueId": 156,
+  "issueUrl": "https://github.com/code-423n4/2022-12-prepo-findings/issues/156"
+}

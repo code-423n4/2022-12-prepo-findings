@@ -16,6 +16,15 @@ PrePOMarketFactory.sol
 ```solidity
   function initialize() public initializer { OwnableUpgradeable.__Ownable_init(); }
 ```
+## Consider with hardcoded gas amount should be used instead of transfer(), Approve() and transferFrom()
+The use of the deprecated transfer() function for an address will inevitably make the transaction fail when:
+
+-The claimer smart contract does not implement a payable function.
+-The claimer smart contract does implement a payable fallback which uses more than 2300 gas unit.
+-The claimer smart contract implements a payable fallback function that needs less than 2300 gas units but is called through proxy, -raising the call's gas usage above 2300.
+-Additionally, using higher than 2300 gas might be mandatory for some multisig wallets.
+
+Use OpenZeppelin’s safeTransfer(),safeIncreaseAllowance() or safeDecreaseAllowance(),safeTransferFrom() instead
 
 ## Consider version soldity 0.8.* && Dependencies
 Collateral.sol	

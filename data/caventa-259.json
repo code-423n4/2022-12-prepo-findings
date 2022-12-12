@@ -1,0 +1,8 @@
+{
+  "contest": 190,
+  "handle": "caventa",
+  "risk": "3",
+  "title": "Wrong variable is used for the first parameter of depositHook.hook()",
+  "issueId": 259,
+  "issueUrl": "https://github.com/code-423n4/2022-12-prepo-findings/issues/259"
+}

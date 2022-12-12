@@ -1,0 +1,8 @@
+{
+  "contest": 190,
+  "handle": "hihen",
+  "risk": "2",
+  "title": "fund may be lost when calling managerWithdraw()",
+  "issueId": 141,
+  "issueUrl": "https://github.com/code-423n4/2022-12-prepo-findings/issues/141"
+}

@@ -1,0 +1,8 @@
+{
+  "contest": 190,
+  "handle": "0Kage",
+  "risk": "2",
+  "title": "`depositAndTrade` function is incomplete & does not use returnValue of UniswapV3 router",
+  "issueId": 319,
+  "issueUrl": "https://github.com/code-423n4/2022-12-prepo-findings/issues/319"
+}

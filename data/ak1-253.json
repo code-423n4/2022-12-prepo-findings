@@ -1,0 +1,8 @@
+{
+  "contest": 190,
+  "handle": "ak1",
+  "risk": "2",
+  "title": "PrePOMarket.sol : Unsafe ERC20 methods",
+  "issueId": 253,
+  "issueUrl": "https://github.com/code-423n4/2022-12-prepo-findings/issues/253"
+}

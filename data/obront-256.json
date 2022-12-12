@@ -1,0 +1,8 @@
+{
+  "contest": 190,
+  "handle": "obront",
+  "risk": "3",
+  "title": "managerWithdraw can be called when manager isn't set, wiping all user funds",
+  "issueId": 256,
+  "issueUrl": "https://github.com/code-423n4/2022-12-prepo-findings/issues/256"
+}

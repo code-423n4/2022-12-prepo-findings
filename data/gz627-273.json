@@ -1,0 +1,8 @@
+{
+  "contest": 190,
+  "handle": "gz627",
+  "risk": "2",
+  "title": "`Collateral.withdraw()` business logic may raise users' concerns of their assets",
+  "issueId": 273,
+  "issueUrl": "https://github.com/code-423n4/2022-12-prepo-findings/issues/273"
+}

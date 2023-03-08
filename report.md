@@ -1,3 +1,11 @@
+---
+sponsor: "prePO"
+slug: "2022-12-prepo"
+date: "2023-01-27"
+title: "prePO contest"
+findings: "https://github.com/code-423n4/2022-12-prepo-findings/issues"
+contest: 190
+---
 
 # Overview
 
